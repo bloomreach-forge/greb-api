@@ -1,6 +1,11 @@
 <#include "../include/imports.ftl">
 
 <#-- @ftlvariable name="document" type="com.onehippo.cms7.genericresource.entitybuilder.demo.beans.NewsDocument" -->
+
+<div>
+  <a href="<@hst.link mount='resourceapi' hippobean=document />" target="_blank">Resource API Link</a>
+</div>
+
 <#if document??>
   <@hst.link var="link" hippobean=document/>
   <article class="has-edit-button">

@@ -8,10 +8,25 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd">
 
+  <bean id="genericResourceEntityJacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+     <property name="annotationIntrospector" ref="genericResourceEntityJacksonJaxbIntrospector"/>
+  </bean>
+
+  <bean id="genericResourceEntityJacksonJaxbIntrospector"
+        class="com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair"
+        factory-method="pair">
+    <constructor-arg>
+      <bean class="com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector"/>
+    </constructor-arg>
+    <constructor-arg>
+      <bean class="com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector"/>
+    </constructor-arg>
+  </bean>
+
   <bean id="genericResourceEntityAggregationValve" parent="aggregationValve"
         class="com.onehippo.cms7.genericresource.entitybuilder.container.GenericResourceEntityAggregationValve">
     <property name="valveName" value="genericResourceEntityAggregationValve"/>
-    <property name="objectMapper" ref="jaxrsRestJacksonObjectMapper" />
+    <property name="objectMapper" ref="genericResourceEntityJacksonObjectMapper" />
   </bean>
 
   <bean id="genericResourceEntitySitePipeline" class="org.hippoecm.hst.core.container.HstSitePipeline">

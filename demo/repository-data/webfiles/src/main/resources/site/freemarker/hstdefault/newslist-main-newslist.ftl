@@ -2,6 +2,11 @@
 
 <#-- @ftlvariable name="item" type="com.onehippo.cms7.genericresource.entitybuilder.demo.beans.NewsDocument" -->
 <#-- @ftlvariable name="pageable" type="org.onehippo.cms7.essentials.components.paging.Pageable" -->
+
+<div>
+  <a href="<@hst.link mount='resourceapi' path='/' />" target="_blank">Resource API Link</a>
+</div>
+
 <#if pageable?? && pageable.items?has_content>
   <div>
     <#list pageable.items as item>

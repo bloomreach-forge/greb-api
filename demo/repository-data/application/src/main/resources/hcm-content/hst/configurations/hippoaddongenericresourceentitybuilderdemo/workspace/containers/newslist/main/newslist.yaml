@@ -1,7 +1,7 @@
 /hst:hst/hst:configurations/hippoaddongenericresourceentitybuilderdemo/hst:workspace/hst:containers/newslist/main/newslist:
   jcr:primaryType: hst:containeritemcomponent
   jcr:uuid: b1624561-eeeb-4c21-a541-a6eb9fa55071
-  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+  hst:componentclassname: com.onehippo.cms7.genericresource.entitybuilder.demo.components.DemoNewsListComponent
   hst:label: News List
   hst:parameternames: [hidePastEvents, documentTypes, sortField, sortOrder, includeSubtypes,
     showPagination, path, pageSize, documentDateField, hideFutureItems]
