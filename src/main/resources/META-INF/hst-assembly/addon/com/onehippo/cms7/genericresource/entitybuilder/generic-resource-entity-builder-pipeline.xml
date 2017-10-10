@@ -8,8 +8,30 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
        http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd">
 
-  <bean id="genericResourceEntityJacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
-     <property name="annotationIntrospector" ref="genericResourceEntityJacksonJaxbIntrospector"/>
+  <bean id="genericResourceEntityJacksonObjectMapperExtraMixins"
+        class="org.springframework.beans.factory.config.MapFactoryBean">
+    <property name="sourceMap">
+      <map>
+      </map>
+    </property>
+  </bean>
+
+  <bean id="genericResourceEntityJacksonObjectMapper"
+        class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+    <constructor-arg value="com.fasterxml.jackson.databind.ObjectMapper" />
+    <property name="targetObject">
+      <bean class="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstContentBeansExcludingObjectMapperDecorator">
+        <property name="extraMixins" ref="genericResourceEntityJacksonObjectMapperExtraMixins" />
+      </bean>
+    </property>
+    <property name="targetMethod" value="decorate" />
+    <property name="arguments">
+      <list>
+        <bean class="com.fasterxml.jackson.databind.ObjectMapper">
+          <property name="annotationIntrospector" ref="genericResourceEntityJacksonJaxbIntrospector"/>
+        </bean>
+      </list>
+    </property>
   </bean>
 
   <bean id="genericResourceEntityJacksonJaxbIntrospector"

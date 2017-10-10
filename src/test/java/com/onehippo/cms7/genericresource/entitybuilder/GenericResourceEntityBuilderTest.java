@@ -4,13 +4,21 @@
 package com.onehippo.cms7.genericresource.entitybuilder;
 
 import java.io.StringWriter;
+import java.util.HashMap;
+import java.util.Map;
+
+import javax.jcr.Node;
+import javax.jcr.Session;
 
 import org.hippoecm.hst.core.request.HstRequestContext;
 import org.hippoecm.hst.mock.core.request.MockHstRequestContext;
 import org.junit.Before;
 import org.junit.Test;
+import org.onehippo.repository.mock.MockNode;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.onehippo.cms7.genericresource.entitybuilder.jackson.DefaultJsonIgnoreTypeMixin;
+import com.onehippo.cms7.genericresource.entitybuilder.jackson.HstContentBeansExcludingObjectMapperDecorator;
 
 public class GenericResourceEntityBuilderTest {
 
@@ -20,7 +28,13 @@ public class GenericResourceEntityBuilderTest {
     @Before
     public void setUp() throws Exception {
         requestContext = new MockHstRequestContext();
-        objectMapper = new ObjectMapper();
+
+        HstContentBeansExcludingObjectMapperDecorator decorator = new HstContentBeansExcludingObjectMapperDecorator();
+        final Map<Class<?>, Class<?>> extraMixins = new HashMap<>();
+        extraMixins.put(Session.class, DefaultJsonIgnoreTypeMixin.class);
+        extraMixins.put(Node.class, DefaultJsonIgnoreTypeMixin.class);
+        decorator.setExtraMixins(extraMixins);
+        objectMapper = decorator.decorate(new ObjectMapper());
     }
 
     @Test
@@ -48,7 +62,21 @@ public class GenericResourceEntityBuilderTest {
         System.out.println(writer.toString());
     }
 
-    public static class Address {
+    public static class ContentBaseBean {
+
+        private Node node = MockNode.root();
+
+        public Node getNode() {
+            return node;
+        }
+
+        public void setNode(Node node) {
+            this.node = node;
+        }
+
+    }
+
+    public static class Address extends ContentBaseBean {
 
         private String street;
         private String city;
