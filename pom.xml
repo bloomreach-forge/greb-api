@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2017 Hippo B.V. (http://www.onehippo.com)
+-->
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <parent>
+    <groupId>com.onehippo.cms7</groupId>
+    <artifactId>hippo-cms7-enterprise-project</artifactId>
+    <version>29.1</version>
+  </parent>
+
+  <name>Hippo Addon Generic Resource Entity Builder</name>
+  <description>Hippo Addon Generic Resource Entity Builder</description>
+  <artifactId>hippo-addon-generic-resource-entity-builder</artifactId>
+  <version>0.9.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+  <url>http://www.onehippo.com/</url>
+  <inceptionYear>2017</inceptionYear>
+
+  <properties>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+
+    <hippo.hst.version>5.0.1</hippo.hst.version>
+
+    <commons-lang.version>2.6</commons-lang.version>
+
+    <junit.version>4.12</junit.version>
+    <easymock.version>3.4</easymock.version>
+
+  </properties>
+
+  <licenses>
+    <license>
+      <name>Hippo Enterprise Software License</name>
+      <url>https://www.onehippo.com/</url>
+      <distribution>repo</distribution>
+    </license>
+  </licenses>
+
+  <repositories>
+    <repository>
+      <id>hippo</id>
+      <name>Hippo maven 2 repository.</name>
+      <url>http://maven.onehippo.com/maven2/</url>
+    </repository>
+    <repository>
+      <id>hippo-maven2-enterprise</id>
+      <name>Hippo Maven 2 Enterprise</name>
+      <url>https://maven.onehippo.com/maven2-enterprise/</url>
+      <releases>
+        <updatePolicy>never</updatePolicy>
+      </releases>
+    </repository>
+  </repositories>
+
+  <scm>
+    <connection>scm:git:git@code.onehippo.org:sandbox/generic-resource-entity-builder.git</connection>
+    <developerConnection>scm:git:git@code.onehippo.org:sandbox/generic-resource-entity-builder.git</developerConnection>
+    <url>https://code.onehippo.org/sandbox/generic-resource-entity-builder</url>
+  </scm>
+
+  <dependencies>
+
+    <dependency>
+      <groupId>org.onehippo.cms7.hst</groupId>
+      <artifactId>hst-api</artifactId>
+      <version>${hippo.hst.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.onehippo.cms7.hst</groupId>
+      <artifactId>hst-commons</artifactId>
+      <version>${hippo.hst.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.onehippo.cms7.hst.components</groupId>
+      <artifactId>hst-core</artifactId>
+      <version>${hippo.hst.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.onehippo.cms7.hst.components</groupId>
+      <artifactId>hst-jaxrs</artifactId>
+      <version>${hippo.hst.version}</version>
+      <scope>provided</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>commons-lang</groupId>
+      <artifactId>commons-lang</artifactId>
+      <version>${commons-lang.version}</version>
+    </dependency>
+
+    <!-- TEST DEPENDENCIES -->
+
+    <dependency>
+      <groupId>junit</groupId>
+      <artifactId>junit</artifactId>
+      <version>${junit.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+    <dependency>
+      <groupId>org.easymock</groupId>
+      <artifactId>easymock</artifactId>
+      <version>${easymock.version}</version>
+      <scope>test</scope>
+    </dependency>
+
+  </dependencies>
+
+</project>
