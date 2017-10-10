@@ -8,7 +8,7 @@
   <parent>
     <groupId>com.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-enterprise-project</artifactId>
-    <version>29.1</version>
+    <version>29.2</version>
   </parent>
 
   <name>Hippo Addon Generic Resource Entity Builder</name>
@@ -22,7 +22,7 @@
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <hippo.hst.version>5.0.1</hippo.hst.version>
+    <hippo.hst.version>5.0.2</hippo.hst.version>
 
     <commons-lang.version>2.6</commons-lang.version>
 
