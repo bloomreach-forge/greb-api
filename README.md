@@ -63,3 +63,43 @@ See ```/hst:hst/hst:hosts/dev-localhost/localhost/hst:root/resourceapi``` node o
 See the example ```contributeResourceEntities(HstRequest)``` method implementations in
 [DemoNewsContentComponent.java](demo/site/src/main/java/com/onehippo/cms7/genericresource/entitybuilder/demo/components/DemoNewsContentComponent.java) and
 [DemoNewsListComponent.java](demo/site/src/main/java/com/onehippo/cms7/genericresource/entitybuilder/demo/components/DemoNewsListComponent.java).
+
+## Using GenericResourceEntityBuilder API
+
+- You need to get ```GenericResourceEntityBuilder``` first like the following:
+```java
+    GenericResourceEntityBuilder builder = GenericResourceEntityBuilder.get(RequestContextProvider.get());
+```
+
+- You can add scalar values or object values:
+
+```java
+    builder.addResourceEntity("title", document.getTitle());
+    builder.addResourceEntity("timestamp", System.currentTimeMillis());
+    builder.addResourceEntity("document", document);
+```
+
+- You can add a container (which is either a ```java.util.Collection``` or ```java.util.Map```):
+
+```java
+    List<Object> references = new LinkedList<>();
+    references.add(referenceDoc1);
+    references.add(referenceDoc2);
+    builder.addResourceEntity("references", references);
+
+    Map<String, Object> images = new LinkedHashMap<>();
+    images.put("portrait", portrait);
+    images.put("landscape", landscape);
+    builder.addResourceEntity("images", images);
+```
+
+You can nest as many objects as you want through container (either ```java.util.Collection``` or ```java.util.Map```) objects.
+
+- You can retrieve a resource entity object whether it is a scalar value, object value, collection or map value:
+
+```java
+    Object value = builder.getResourceEntity(name)
+    Collection<Object> collectionValue = builder.getCollectionResourceEntity(name);
+    Map<Object> mapValue = builder.getMapResourceEntity(name);
+ ```
+

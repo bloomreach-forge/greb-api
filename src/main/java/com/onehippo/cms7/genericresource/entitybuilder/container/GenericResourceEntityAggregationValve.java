@@ -21,10 +21,9 @@ import org.hippoecm.hst.core.request.HstRequestContext;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.fasterxml.jackson.core.JsonGenerationException;
-import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.onehippo.cms7.genericresource.entitybuilder.GenericResourceEntityBuilder;
+import com.onehippo.cms7.genericresource.entitybuilder.GenericResourceEntityBuilderException;
 
 public class GenericResourceEntityAggregationValve extends AggregationValve {
 
@@ -59,10 +58,8 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
             response.setContentType("application/json");
             writer = response.getWriter();
             builder.write(getObjectMapper(), writer);
-        } catch (JsonGenerationException e) {
+        } catch (GenericResourceEntityBuilderException e) {
             log.warn("Failed to generate json.", e);
-        } catch (JsonMappingException e) {
-            log.warn("Failed to map objects to json.", e);
         } catch (IOException e) {
             log.warn("Failed to write json.", e);
         } finally {
