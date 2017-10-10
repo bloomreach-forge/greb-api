@@ -3,87 +3,65 @@
  */
 package com.onehippo.cms7.genericresource.entitybuilder.jackson;
 
-import java.util.List;
-import java.util.Locale;
 import java.util.Map;
 
 import javax.jcr.Node;
 
 import org.hippoecm.hst.content.beans.standard.HippoAvailableTranslationsBean;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
-import org.hippoecm.hst.content.beans.standard.HippoDocumentBean;
-import org.hippoecm.hst.content.beans.standard.HippoFacetNavigationBean;
-import org.hippoecm.hst.content.beans.standard.HippoFolderBean;
-import org.hippoecm.hst.content.beans.standard.HippoResultSetBean;
 import org.hippoecm.hst.provider.jcr.JCRValueProvider;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
-public interface DefaultHstContentBeanIgnoreMixin {
+public interface HippoBeanMixin extends HippoBean {
 
     @JsonIgnore
+    @Override
     public Node getNode();
 
     @JsonIgnore
+    @Override
     public JCRValueProvider getValueProvider();
 
     @Deprecated
     @JsonIgnore
+    @Override
     public String getLocalizedName();
 
     @JsonIgnore
+    @Override
     public Map<String, Object> getProperties();
 
     @JsonIgnore
+    @Override
     public Map<String, Object> getProperty();
 
     @JsonIgnore
+    @Override
     public HippoBean getParentBean();
 
     @JsonIgnore
+    @Override
     public <T extends HippoBean> T getCanonicalBean();
 
     @JsonIgnore
+    @Override
     public boolean isHippoDocumentBean();
 
     @JsonIgnore
+    @Override
     public boolean isHippoFolderBean();
 
     @JsonIgnore
+    @Override
     public boolean isLeaf();
 
     @JsonIgnore
+    @Override
     public <T extends HippoBean> HippoAvailableTranslationsBean<T> getAvailableTranslations();
 
     @JsonIgnore
+    @Override
     public Map<Object, Object> getEqualComparator();
-
-    @JsonIgnore
-    public Locale getLocale();
-
-    @JsonIgnore
-    public List<HippoFolderBean> getFolders();
-
-    @JsonIgnore
-    public List<HippoDocumentBean> getDocuments();
-
-    @JsonIgnore
-    public HippoBean getReferencedBean();
-
-    @Deprecated
-    @JsonIgnore
-    public HippoBean getDeref();
-
-    @JsonIgnore
-    public HippoResultSetBean getResultSet();
-
-    @JsonIgnore
-    public HippoFacetNavigationBean getRootFacetNavigationBean();
-
-    @JsonIgnore
-    public HippoBean getDocument();
-
-    @JsonIgnore
-    public String getComparePath();
 
 }

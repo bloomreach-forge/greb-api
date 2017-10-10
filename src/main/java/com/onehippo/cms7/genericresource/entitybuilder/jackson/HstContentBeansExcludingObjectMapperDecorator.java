@@ -11,6 +11,13 @@ import javax.jcr.Session;
 
 import org.hippoecm.hst.content.beans.manager.ObjectConverter;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
+import org.hippoecm.hst.content.beans.standard.HippoDocumentBean;
+import org.hippoecm.hst.content.beans.standard.HippoFolderBean;
+import org.hippoecm.hst.content.beans.standard.HippoGalleryImageBean;
+import org.hippoecm.hst.content.beans.standard.HippoGalleryImageSetBean;
+import org.hippoecm.hst.content.beans.standard.HippoHtmlBean;
+import org.hippoecm.hst.content.beans.standard.HippoMirrorBean;
+import org.hippoecm.hst.content.beans.standard.HippoRequestBean;
 import org.hippoecm.hst.provider.ValueProvider;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -29,7 +36,14 @@ public class HstContentBeansExcludingObjectMapperDecorator {
         defaultMixins.put(ValueProvider.class, DefaultJsonIgnoreTypeMixin.class);
         defaultMixins.put(ObjectConverter.class, DefaultJsonIgnoreTypeMixin.class);
 
-        defaultMixins.put(HippoBean.class, DefaultHstContentBeanIgnoreMixin.class);
+        defaultMixins.put(HippoGalleryImageBean.class, HippoGalleryImageBeanMixin.class);
+        defaultMixins.put(HippoGalleryImageSetBean.class, HippoGalleryImageSetBeanMixin.class);
+        defaultMixins.put(HippoHtmlBean.class, HippoHtmlBeanMixin.class);
+        defaultMixins.put(HippoRequestBean.class, HippoRequestBeanMixin.class);
+        defaultMixins.put(HippoMirrorBean.class, HippoMirrorBeanMixin.class);
+        defaultMixins.put(HippoFolderBean.class, HippoFolderBeanMixin.class);
+        defaultMixins.put(HippoDocumentBean.class, HippoDocumentBeanMixin.class);
+        defaultMixins.put(HippoBean.class, HippoBeanMixin.class);
     }
 
     public Map<Class<?>, Class<?>> getDefaultMixins() {
