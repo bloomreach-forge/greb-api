@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Copyright 2017 Hippo B.V. (http://www.onehippo.com)
+-->
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+  <bean id="genericResourceEntityAggregationValve" parent="aggregationValve"
+        class="com.onehippo.cms7.genericresource.entitybuilder.container.GenericResourceEntityAggregationValve">
+    <property name="valveName" value="genericResourceEntityAggregationValve"/>
+  </bean>
+
+  <bean id="genericResourceEntitySitePipeline" class="org.hippoecm.hst.core.container.HstSitePipeline">
+    <property name="initializationValves">
+      <list>
+        <ref bean="initializationValve" />
+        <ref bean="cmsSecurityValve"/>
+      </list>
+    </property>
+    <property name="processingValves">
+      <list>
+        <ref bean="securityValve" />
+        <ref bean="subjectBasedSessionValve" />
+        <ref bean="jcrSessionStatefulConcurrencyValve"/>
+        <ref bean="contextResolvingValve" />
+        <ref bean="localizationValve" />
+        <ref bean="actionValve" />
+        <ref bean="resourceServingValve" />
+        <ref bean="pageInfoRenderingValve" />
+        <ref bean="esiPageInfoScanningValve" />
+        <ref bean="pageCachingValve"/>
+        <ref bean="componentRenderingValve" />
+        <ref bean="genericResourceEntityAggregationValve" />
+      </list>
+    </property>
+    <property name="cleanupValves">
+      <list>
+        <ref bean="diagnosticReportingValve" />
+        <ref bean="cleanupValve" />
+      </list>
+    </property>
+  </bean>
+
+  <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+    <constructor-arg value="java.lang.Void" />
+    <property name="targetObject">
+      <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+        <constructor-arg value="org.hippoecm.hst.core.container.Pipelines" />
+        <property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines" />
+        <property name="targetMethod" value="getPipelines" />
+      </bean>
+    </property>
+    <property name="targetMethod" value="put"/>
+    <property name="arguments">
+      <list>
+        <value>GenericResourceEntitySitePipeline</value>
+        <ref bean="genericResourceEntitySitePipeline" />
+      </list>
+    </property>
+  </bean>
+
+</beans>
