@@ -52,7 +52,7 @@ public class GenericResourceEntityBuilder {
 
     public Object getResourceEntity(String name) throws GenericResourceEntityBuilderException {
         if (name == null) {
-            throw new IllegalArgumentException("resourcePath must be a non-null value.");
+            throw new IllegalArgumentException("name must be a non-null value.");
         }
 
         name = StringUtils.trim(name);
@@ -90,7 +90,7 @@ public class GenericResourceEntityBuilder {
     @SuppressWarnings("unchecked")
     public void addResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
         if (name == null) {
-            throw new IllegalArgumentException("resourcePath must be a non-null value.");
+            throw new IllegalArgumentException("name must be a non-null value.");
         }
 
         name = StringUtils.trim(name);
@@ -110,7 +110,7 @@ public class GenericResourceEntityBuilder {
 
     public void setResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
         if (name == null) {
-            throw new IllegalArgumentException("resourcePath must be a non-null value.");
+            throw new IllegalArgumentException("name must be a non-null value.");
         }
 
         name = StringUtils.trim(name);
@@ -119,7 +119,7 @@ public class GenericResourceEntityBuilder {
 
     public void removeResourceEntity(String name) throws GenericResourceEntityBuilderException {
         if (name == null) {
-            throw new IllegalArgumentException("resourcePath must be a non-null value.");
+            throw new IllegalArgumentException("name must be a non-null value.");
         }
 
         name = StringUtils.trim(name);
