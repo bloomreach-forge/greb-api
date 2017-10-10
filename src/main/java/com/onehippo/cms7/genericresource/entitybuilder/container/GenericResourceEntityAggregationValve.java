@@ -33,6 +33,9 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
     private ObjectMapper objectMapper;
 
     public ObjectMapper getObjectMapper() {
+        if (objectMapper == null) {
+            objectMapper = new ObjectMapper();
+        }
         return objectMapper;
     }
 
@@ -55,7 +58,7 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
         try {
             response.setContentType("application/json");
             writer = response.getWriter();
-            builder.write(objectMapper, writer);
+            builder.write(getObjectMapper(), writer);
         } catch (JsonGenerationException e) {
             log.warn("Failed to generate json.", e);
         } catch (JsonMappingException e) {

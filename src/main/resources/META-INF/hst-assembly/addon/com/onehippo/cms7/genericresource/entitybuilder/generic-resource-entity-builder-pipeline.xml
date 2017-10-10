@@ -11,6 +11,7 @@
   <bean id="genericResourceEntityAggregationValve" parent="aggregationValve"
         class="com.onehippo.cms7.genericresource.entitybuilder.container.GenericResourceEntityAggregationValve">
     <property name="valveName" value="genericResourceEntityAggregationValve"/>
+    <property name="objectMapper" ref="jaxrsRestJacksonObjectMapper" />
   </bean>
 
   <bean id="genericResourceEntitySitePipeline" class="org.hippoecm.hst.core.container.HstSitePipeline">
