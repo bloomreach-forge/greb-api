@@ -1,0 +1,12 @@
+/hst:hst/hst:configurations/hippoaddongenericresourceentitybuilderdemo/hst:workspace/hst:containers/newslist/main/newslist:
+  jcr:primaryType: hst:containeritemcomponent
+  jcr:uuid: b1624561-eeeb-4c21-a541-a6eb9fa55071
+  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+  hst:label: News List
+  hst:parameternames: [hidePastEvents, documentTypes, sortField, sortOrder, includeSubtypes,
+    showPagination, path, pageSize, documentDateField, hideFutureItems]
+  hst:parametervalues: ['on', 'hippoaddongenericresourceentitybuilderdemo:newsdocument',
+    '', desc, 'off', 'on', '', '10', 'hippoaddongenericresourceentitybuilderdemo:date',
+    'on']
+  hst:template: newslist-main-newslist
+  hst:xtype: hst.item

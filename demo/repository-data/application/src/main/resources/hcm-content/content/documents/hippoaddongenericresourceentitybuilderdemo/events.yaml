@@ -1,0 +1,147 @@
+/content/documents/hippoaddongenericresourceentitybuilderdemo/events:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+  jcr:uuid: 0a573482-b4e8-4f60-9032-0db1650f05d6
+  hippostd:foldertype: [new-events-document, new-events-folder]
+  hippotranslation:id: cf6bcd63-88f7-4cd2-b437-c3464363cccc
+  hippotranslation:locale: en
+  /2017:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+    jcr:uuid: 3a82d53f-6387-463c-930f-0767dfe09894
+    hippostd:foldertype: [new-events-document, new-events-folder]
+    hippotranslation:id: 792fcb45-6e3b-4039-a0f9-97be72be5fbc
+    hippotranslation:locale: en
+    /10:
+      jcr:primaryType: hippostd:folder
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: e9263921-78a6-42d6-a11b-9818aa631aaa
+      hippostd:foldertype: [new-events-document, new-events-folder]
+      hippotranslation:id: a4cbb956-b0e9-4a01-ab00-066c30e74c8d
+      hippotranslation:locale: en
+      /breakfast:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: b8f5eb45-7200-452a-b26e-3118a0dc60b8
+        hippo:name: Breakfast
+        /breakfast:
+          jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:eventsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 64a1e9ef-80fe-4fa3-8b2d-b91f9d7501e2
+          hippo:availability: [live, preview]
+          hippoaddongenericresourceentitybuilderdemo:date: 2013-11-12T08:00:00+01:00
+          hippoaddongenericresourceentitybuilderdemo:documenttype: event
+          hippoaddongenericresourceentitybuilderdemo:enddate: 2018-10-10T11:26:00-04:00
+          hippoaddongenericresourceentitybuilderdemo:introduction: Start the day with
+            a nice breakfast.
+          hippoaddongenericresourceentitybuilderdemo:location: Room 101
+          hippoaddongenericresourceentitybuilderdemo:title: Breakfast
+          hippostd:holder: admin
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T11:00:00+01:00
+          hippostdpubwf:lastModificationDate: 2013-11-12T11:11:00+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2013-11-12T12:16:00+01:00
+          hippotranslation:id: 815297d7-1446-48cb-8101-b80f59093b2e
+          hippotranslation:locale: en
+          /hippoaddongenericresourceentitybuilderdemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+
+                        <p>Breakfast is served starting from 8:00 until 9:30.</p>
+
+                        </body>
+                        </html>
+          /hippoaddongenericresourceentitybuilderdemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: c8f03498-56eb-46c9-83b2-cf014f2e03d7
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []
+      /introduction-speech:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 18e36c35-429d-4fee-b76e-eeabcbfc08bb
+        hippo:name: Introduction speech
+        /introduction-speech:
+          jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:eventsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 4185d49f-0aef-4d8e-b0df-bfbdd2a20ca7
+          hippo:availability: [live, preview]
+          hippoaddongenericresourceentitybuilderdemo:date: 2013-11-12T10:00:00+01:00
+          hippoaddongenericresourceentitybuilderdemo:documenttype: event
+          hippoaddongenericresourceentitybuilderdemo:enddate: 2018-10-10T11:26:00-04:00
+          hippoaddongenericresourceentitybuilderdemo:introduction: After breakfast
+            there will be an introductory speech.
+          hippoaddongenericresourceentitybuilderdemo:location: Room 400
+          hippoaddongenericresourceentitybuilderdemo:title: Introduction speech
+          hippostd:holder: admin
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T11:02:00+01:00
+          hippostdpubwf:lastModificationDate: 2013-11-12T11:16:00+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2013-11-12T12:16:00+01:00
+          hippotranslation:id: 21d3b9e0-1a8a-4d45-8f97-be2bff07d5d8
+          hippotranslation:locale: en
+          /hippoaddongenericresourceentitybuilderdemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+
+                        <p>Speech will be about the workshop.</p>
+
+                        </body>
+                        </html>
+          /hippoaddongenericresourceentitybuilderdemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: 9f32434e-84e3-4150-a6f2-d89a67be2fb1
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []
+      /workshop:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 7a29ec60-2689-48b2-aca2-49696c5c23eb
+        /workshop:
+          jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:eventsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 559e1994-6327-479e-bda7-90262872b9e1
+          hippo:availability: [live, preview]
+          hippoaddongenericresourceentitybuilderdemo:date: 2013-11-12T13:00:00+01:00
+          hippoaddongenericresourceentitybuilderdemo:documenttype: event
+          hippoaddongenericresourceentitybuilderdemo:enddate: 2018-10-10T11:26:00-04:00
+          hippoaddongenericresourceentitybuilderdemo:introduction: Workshop starts
+            at 1:00
+          hippoaddongenericresourceentitybuilderdemo:location: Room 600
+          hippoaddongenericresourceentitybuilderdemo:title: Workshop
+          hippostd:holder: admin
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T11:16:00+01:00
+          hippostdpubwf:lastModificationDate: 2013-11-12T11:18:00+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2013-11-12T12:16:00+01:00
+          hippotranslation:id: 172c52cb-3cac-4aaf-b65e-d62a21f765b2
+          hippotranslation:locale: en
+          /hippoaddongenericresourceentitybuilderdemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+                        <strong>Everybody </strong>
+                        <p>can join the workshop and start practicing what they learned during the last
+                        week.</p>
+
+                        </body>
+                        </html>
+          /hippoaddongenericresourceentitybuilderdemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: d035387b-f9ce-49f6-bcb0-9ab6915a2d5f
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []

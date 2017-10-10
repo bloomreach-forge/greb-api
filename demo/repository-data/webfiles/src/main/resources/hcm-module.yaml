@@ -1,0 +1,5 @@
+group: 
+  name: hippo-addon-generic-resource-entity-builder-demo
+  after: hippo-cms
+project: hippo-addon-generic-resource-entity-builder-demo
+module: hippo-addon-generic-resource-entity-builder-demo-repository-data-webfiles

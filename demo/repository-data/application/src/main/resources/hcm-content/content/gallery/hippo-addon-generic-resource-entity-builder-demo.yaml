@@ -1,0 +1,7 @@
+/content/gallery/hippoaddongenericresourceentitybuilderdemo:
+  jcr:primaryType: hippogallery:stdImageGallery
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 72e9bf47-1ccd-4076-af4e-2072a53638b9
+  hippo:name: Generic Resource Entity Builder Demo
+  hippostd:foldertype: [new-image-folder]
+  hippostd:gallerytype: ['hippogallery:imageset']
