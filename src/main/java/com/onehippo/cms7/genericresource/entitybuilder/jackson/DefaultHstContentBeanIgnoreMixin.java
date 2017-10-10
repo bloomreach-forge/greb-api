@@ -27,6 +27,7 @@ public interface DefaultHstContentBeanIgnoreMixin {
     @JsonIgnore
     public JCRValueProvider getValueProvider();
 
+    @Deprecated
     @JsonIgnore
     public String getLocalizedName();
 
