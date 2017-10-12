@@ -64,6 +64,39 @@ See the example ```contributeResourceEntities(HstRequest)``` method implementati
 [DemoNewsContentComponent.java](demo/site/src/main/java/com/onehippo/cms7/genericresource/entitybuilder/demo/components/DemoNewsContentComponent.java) and
 [DemoNewsListComponent.java](demo/site/src/main/java/com/onehippo/cms7/genericresource/entitybuilder/demo/components/DemoNewsListComponent.java).
 
+## Enabling Relevance (```TargetingUpdateValve```) in ```GenericResourceEntitySitePipeline```
+
+- Add an xml file in ```site/src/main/resources/META-INF/hst-assembly/overrides/``` folder. e.g, ```generic-resource-entity-site-pipeline-targeting.xml``` and add the following there:
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+  <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+    <constructor-arg value="java.lang.Void" />
+    <property name="targetObject">
+      <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
+        <property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines"/>
+        <property name="targetMethod" value="getPipeline"/>
+        <property name="arguments" value="GenericResourceEntitySitePipeline"/>
+      </bean>
+    </property>
+    <property name="targetMethod" value="addProcessingValve"/>
+    <property name="arguments">
+      <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve">
+        <property name="valveName" value="targetingUpdateValve" />
+        <property name="afterValves" value="contextResolvingValve, localizationValve" />
+        <property name="beforeValves" value="actionValve, resourceServingValve" />
+      </bean>
+    </property>
+  </bean>
+
+</beans>
+```
+
+
 ## Using GenericResourceEntityBuilder API
 
 - You need to get ```GenericResourceEntityBuilder``` first like the following:
