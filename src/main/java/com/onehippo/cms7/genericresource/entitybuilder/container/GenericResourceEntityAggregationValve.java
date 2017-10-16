@@ -10,6 +10,7 @@ import java.util.Map;
 import javax.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
+import org.apache.commons.lang.StringUtils;
 import org.hippoecm.hst.container.RequestContextProvider;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
@@ -29,7 +30,11 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
 
     private static Logger log = LoggerFactory.getLogger(GenericResourceEntityAggregationValve.class);
 
+    private static final String DEFAULT_OUTPUT_FORMAT_PARAM_NAME = "_format";
+    private static final String OUTPUT_FORMAT_JSON = "JSON";
+
     private ObjectMapper objectMapper;
+    private String outputFormatParamName = DEFAULT_OUTPUT_FORMAT_PARAM_NAME;
 
     public ObjectMapper getObjectMapper() {
         if (objectMapper == null) {
@@ -42,19 +47,35 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
         this.objectMapper = objectMapper;
     }
 
+    public String getOutputFormatParamName() {
+        return outputFormatParamName;
+    }
+
+    public void setOutputFormatParamName(String outputFormatParamName) {
+        this.outputFormatParamName = outputFormatParamName;
+    }
+
     @Override
     protected void processWindowsRender(final HstContainerConfig requestContainerConfig,
             final HstComponentWindow[] sortedComponentWindows, final Map<HstComponentWindow, HstRequest> requestMap,
             final Map<HstComponentWindow, HstResponse> responseMap) throws ContainerException {
 
         final HstRequestContext requestContext = RequestContextProvider.get();
-        final String componentRenderingWindowReferenceNamespace = requestContext.getBaseURL()
-                .getComponentRenderingWindowReferenceNamespace();
+        final String paramName = getOutputFormatParamName();
 
-        if (componentRenderingWindowReferenceNamespace != null) {
-            // When component rendering is needed, let's not produce JSON, but let the super class produce normal output.
-            super.processWindowsRender(requestContainerConfig, sortedComponentWindows, requestMap, responseMap);
-            return;
+        if (StringUtils.isNotBlank(paramName)) {
+            final String paramValue = requestContext.getServletRequest().getParameter(paramName);
+
+            if (StringUtils.isNotBlank(paramValue) && !StringUtils.equalsIgnoreCase(OUTPUT_FORMAT_JSON, paramValue)) {
+                final String componentRenderingWindowReferenceNamespace = requestContext.getBaseURL()
+                        .getComponentRenderingWindowReferenceNamespace();
+
+                if (componentRenderingWindowReferenceNamespace != null) {
+                    // When component rendering is needed, let's not produce JSON, but let the super class produce normal output.
+                    super.processWindowsRender(requestContainerConfig, sortedComponentWindows, requestMap, responseMap);
+                    return;
+                }
+            }
         }
 
         final HttpServletResponse response = requestContext.getServletResponse();

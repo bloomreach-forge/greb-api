@@ -10,6 +10,7 @@ import java.util.LinkedHashMap;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
 import org.apache.commons.lang.StringUtils;
 import org.hippoecm.hst.core.request.HstRequestContext;
@@ -50,6 +51,10 @@ public class GenericResourceEntityBuilder {
         resourceEntityMap = new LinkedHashMap<>();
     }
 
+    public Set<String> getResourceEntityNames() {
+        return resourceEntityMap.keySet();
+    }
+
     public Object getResourceEntity(String name) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
@@ -88,7 +93,7 @@ public class GenericResourceEntityBuilder {
     }
 
     @SuppressWarnings("unchecked")
-    public void addResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
+    public Object addResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
         }
@@ -100,30 +105,31 @@ public class GenericResourceEntityBuilder {
             List<Object> list = new LinkedList<>();
             list.add(resourceEntity);
             value = list;
-            resourceEntityMap.put(name, value);
+            return resourceEntityMap.put(name, value);
         } else if (value instanceof Collection) {
             ((Collection<Object>) value).add(resourceEntity);
+            return resourceEntity;
         } else {
             throw new GenericResourceEntityBuilderException("A non-collection value already exists by name, '" + name + "'.");
         }
     }
 
-    public void setResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
+    public Object setResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
         }
 
         name = StringUtils.trim(name);
-        resourceEntityMap.put(name, resourceEntity);
+        return resourceEntityMap.put(name, resourceEntity);
     }
 
-    public void removeResourceEntity(String name) throws GenericResourceEntityBuilderException {
+    public Object removeResourceEntity(String name) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
         }
 
         name = StringUtils.trim(name);
-        resourceEntityMap.remove(name);
+        return resourceEntityMap.remove(name);
     }
 
     public void write(final ObjectMapper objectMapper, final Writer writer)

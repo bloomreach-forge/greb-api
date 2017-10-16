@@ -18,7 +18,7 @@ import org.onehippo.repository.mock.MockNode;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.onehippo.cms7.genericresource.entitybuilder.jackson.DefaultJsonIgnoreTypeMixin;
-import com.onehippo.cms7.genericresource.entitybuilder.jackson.HstContentBeansExcludingObjectMapperDecorator;
+import com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator;
 
 public class GenericResourceEntityBuilderTest {
 
@@ -29,7 +29,7 @@ public class GenericResourceEntityBuilderTest {
     public void setUp() throws Exception {
         requestContext = new MockHstRequestContext();
 
-        HstContentBeansExcludingObjectMapperDecorator decorator = new HstContentBeansExcludingObjectMapperDecorator();
+        HstBeansExcludingObjectMapperDecorator decorator = new HstBeansExcludingObjectMapperDecorator();
         final Map<Class<?>, Class<?>> extraMixins = new HashMap<>();
         extraMixins.put(Session.class, DefaultJsonIgnoreTypeMixin.class);
         extraMixins.put(Node.class, DefaultJsonIgnoreTypeMixin.class);

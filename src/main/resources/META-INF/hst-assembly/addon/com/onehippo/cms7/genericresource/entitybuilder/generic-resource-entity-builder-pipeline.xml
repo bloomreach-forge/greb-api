@@ -20,7 +20,7 @@
         class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
     <constructor-arg value="com.fasterxml.jackson.databind.ObjectMapper" />
     <property name="targetObject">
-      <bean class="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstContentBeansExcludingObjectMapperDecorator">
+      <bean class="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator">
         <property name="extraMixins" ref="genericResourceEntityJacksonObjectMapperExtraMixins" />
       </bean>
     </property>

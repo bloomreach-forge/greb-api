@@ -18,16 +18,19 @@ import org.hippoecm.hst.content.beans.standard.HippoGalleryImageSetBean;
 import org.hippoecm.hst.content.beans.standard.HippoHtmlBean;
 import org.hippoecm.hst.content.beans.standard.HippoMirrorBean;
 import org.hippoecm.hst.content.beans.standard.HippoRequestBean;
+import org.hippoecm.hst.core.linking.HstLink;
+import org.hippoecm.hst.core.sitemenu.HstSiteMenu;
+import org.hippoecm.hst.core.sitemenu.HstSiteMenuItem;
 import org.hippoecm.hst.provider.ValueProvider;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-public class HstContentBeansExcludingObjectMapperDecorator {
+public class HstBeansExcludingObjectMapperDecorator {
 
     private Map<Class<?>, Class<?>> defaultMixins;
     private Map<Class<?>, Class<?>> extraMixins;
 
-    public HstContentBeansExcludingObjectMapperDecorator() {
+    public HstBeansExcludingObjectMapperDecorator() {
         defaultMixins = new LinkedHashMap<>();
 
         defaultMixins.put(Session.class, DefaultJsonIgnoreTypeMixin.class);
@@ -44,6 +47,10 @@ public class HstContentBeansExcludingObjectMapperDecorator {
         defaultMixins.put(HippoFolderBean.class, HippoFolderBeanMixin.class);
         defaultMixins.put(HippoDocumentBean.class, HippoDocumentBeanMixin.class);
         defaultMixins.put(HippoBean.class, HippoBeanMixin.class);
+
+        defaultMixins.put(HstLink.class, HstLinkMixin.class);
+        defaultMixins.put(HstSiteMenuItem.class, HstSiteMenuItemMixin.class);
+        defaultMixins.put(HstSiteMenu.class, HstSiteMenuMixin.class);
     }
 
     public Map<Class<?>, Class<?>> getDefaultMixins() {

@@ -8,6 +8,7 @@ import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
 import org.hippoecm.hst.core.parameters.ParametersInfo;
+import org.hippoecm.hst.core.sitemenu.HstSiteMenu;
 import org.onehippo.cms7.essentials.components.EssentialsNewsComponent;
 import org.onehippo.cms7.essentials.components.info.EssentialsNewsComponentInfo;
 import org.onehippo.cms7.essentials.components.paging.Pageable;
@@ -34,6 +35,12 @@ public class DemoNewsListComponent extends EssentialsNewsComponent {
 
         if (pageable != null) {
             builder.setResourceEntity("page", pageable);
+        }
+
+        final HstSiteMenu mainMenu = request.getRequestContext().getHstSiteMenus().getSiteMenu("main");
+
+        if (mainMenu != null) {
+            builder.setResourceEntity("mainMenu", mainMenu);
         }
     }
 }
