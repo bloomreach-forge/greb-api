@@ -3,11 +3,11 @@
  */
 package com.onehippo.cms7.genericresource.entitybuilder.jackson;
 
-import org.hippoecm.hst.core.linking.HstLink;
+import org.hippoecm.hst.core.component.HstURL;
 
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 
-@JsonSerialize(using = HstLinkSerializer.class)
-public interface HstLinkMixin extends HstLink {
+@JsonSerialize(using = HstURLSerializer.class)
+public interface HstURLMixin extends HstURL {
 
 }

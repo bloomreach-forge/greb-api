@@ -30,6 +30,6 @@ public class DemoNewsContentComponent extends EssentialsContentComponent {
         }
 
         final HstURL componentRenderingURL = response.createComponentRenderingURL();
-        builder.setResourceEntity("componentRenderingURL", componentRenderingURL.toString());
+        builder.setResourceEntity("componentRenderingURL", componentRenderingURL);
     }
 }

@@ -16,14 +16,15 @@
     </property>
   </bean>
 
+  <bean id="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator"
+        class="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator">
+    <property name="extraMixins" ref="genericResourceEntityJacksonObjectMapperExtraMixins" />
+  </bean>
+
   <bean id="genericResourceEntityJacksonObjectMapper"
         class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
     <constructor-arg value="com.fasterxml.jackson.databind.ObjectMapper" />
-    <property name="targetObject">
-      <bean class="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator">
-        <property name="extraMixins" ref="genericResourceEntityJacksonObjectMapperExtraMixins" />
-      </bean>
-    </property>
+    <property name="targetObject" ref="com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator" />
     <property name="targetMethod" value="decorate" />
     <property name="arguments">
       <list>
