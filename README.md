@@ -143,4 +143,33 @@ if you add ```_format=html``` (any other value different from ```_format=json```
 (HTML) output as same as how the parent mount produces.
 This can be useful if you want to get an HTML output for an HST Component Rendering URL, for instance.
 
+## Overriding Component Beans
+
+It is possible to override the default component beans of this module by adding XML file(s) into
+```site/src/main/resources/META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder/```.
+
+For example, you can add extra Jackson Mixin classes for this module
+in ```classpath*:META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder/custom-mixins.xml``` like the following example:
+
+```xml
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+       http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.1.xsd">
+
+  <bean id="genericResourceEntityJacksonObjectMapperExtraMixins"
+        class="org.springframework.beans.factory.config.MapFactoryBean">
+    <property name="sourceMap">
+      <map>
+        <!-- Adding Jackson Mixin class, MyBeanMixin, for MyBean class type. -->
+        <entry key="org.example.beans.MyBean" value="org.example.beans.jackson.MyBeanMixin" />
+        <!-- SNIP -->
+      </map>
+    </property>
+  </bean>
+
+</beans>
+```
+
 
