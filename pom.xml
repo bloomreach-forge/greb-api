@@ -57,9 +57,9 @@
   </repositories>
 
   <scm>
-    <connection>scm:git:git@code.onehippo.org:sandbox/generic-resource-entity-builder.git</connection>
-    <developerConnection>scm:git:git@code.onehippo.org:sandbox/generic-resource-entity-builder.git</developerConnection>
-    <url>https://code.onehippo.org/sandbox/generic-resource-entity-builder</url>
+    <connection>scm:git:git@code.onehippo.org:prof-services/hippo-addon-generic-resource-entity-builder.git</connection>
+    <developerConnection>scm:git:git@code.onehippo.org:prof-services/hippo-addon-generic-resource-entity-builder.git</developerConnection>
+    <url>https://code.onehippo.org/prof-services/generic-resource-entity-builder</url>
   </scm>
 
   <dependencies>
