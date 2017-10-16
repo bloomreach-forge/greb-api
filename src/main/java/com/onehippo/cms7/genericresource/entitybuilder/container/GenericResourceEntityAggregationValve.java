@@ -67,14 +67,8 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
             final String paramValue = requestContext.getServletRequest().getParameter(paramName);
 
             if (StringUtils.isNotBlank(paramValue) && !StringUtils.equalsIgnoreCase(OUTPUT_FORMAT_JSON, paramValue)) {
-                final String componentRenderingWindowReferenceNamespace = requestContext.getBaseURL()
-                        .getComponentRenderingWindowReferenceNamespace();
-
-                if (componentRenderingWindowReferenceNamespace != null) {
-                    // When component rendering is needed, let's not produce JSON, but let the super class produce normal output.
-                    super.processWindowsRender(requestContainerConfig, sortedComponentWindows, requestMap, responseMap);
-                    return;
-                }
+                super.processWindowsRender(requestContainerConfig, sortedComponentWindows, requestMap, responseMap);
+                return;
             }
         }
 
