@@ -136,3 +136,11 @@ You can nest as many objects as you want through container (either ```java.util.
     Map<Object> mapValue = builder.getMapResourceEntity(name);
  ```
 
+## Special Output Format Query Parameter
+
+In any URL from the mount configured with the Generic Resource Entity Builder API (e.g, "resourceapi") pipeline,
+if you add ```_format=html``` (any other value different from ```_format=json``` actually) query parameter, the pipeline will render the normal
+(HTML) output as same as how the parent mount produces.
+This can be useful if you want to get an HTML output for an HST Component Rendering URL, for instance.
+
+
