@@ -21,10 +21,10 @@ public class DemoNewsListComponent extends EssentialsNewsComponent {
     public void doBeforeRender(final HstRequest request, final HstResponse response) {
         super.doBeforeRender(request, response);
 
-        contributeResourceEntities(request);
+        contributeResourceEntities(request, response);
     }
 
-    private void contributeResourceEntities(final HstRequest request) {
+    private void contributeResourceEntities(final HstRequest request, final HstResponse response) {
         GenericResourceEntityBuilder builder = GenericResourceEntityBuilder.get(request.getRequestContext());
 
         final EssentialsNewsComponentInfo paramInfo = getComponentParametersInfo(request);

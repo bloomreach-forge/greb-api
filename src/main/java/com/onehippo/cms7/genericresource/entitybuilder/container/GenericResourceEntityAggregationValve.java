@@ -48,6 +48,15 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
             final Map<HstComponentWindow, HstResponse> responseMap) throws ContainerException {
 
         final HstRequestContext requestContext = RequestContextProvider.get();
+        final String componentRenderingWindowReferenceNamespace = requestContext.getBaseURL()
+                .getComponentRenderingWindowReferenceNamespace();
+
+        if (componentRenderingWindowReferenceNamespace != null) {
+            // When component rendering is needed, let's not produce JSON, but let the super class produce normal output.
+            super.processWindowsRender(requestContainerConfig, sortedComponentWindows, requestMap, responseMap);
+            return;
+        }
+
         final HttpServletResponse response = requestContext.getServletResponse();
 
         GenericResourceEntityBuilder builder = GenericResourceEntityBuilder.get(requestContext);

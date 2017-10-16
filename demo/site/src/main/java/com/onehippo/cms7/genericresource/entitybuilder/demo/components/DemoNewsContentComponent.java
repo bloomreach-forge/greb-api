@@ -5,6 +5,7 @@ package com.onehippo.cms7.genericresource.entitybuilder.demo.components;
 
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
+import org.hippoecm.hst.core.component.HstURL;
 import org.onehippo.cms7.essentials.components.EssentialsContentComponent;
 
 import com.onehippo.cms7.genericresource.entitybuilder.GenericResourceEntityBuilder;
@@ -16,10 +17,10 @@ public class DemoNewsContentComponent extends EssentialsContentComponent {
     public void doBeforeRender(final HstRequest request, final HstResponse response) {
         super.doBeforeRender(request, response);
 
-        contributeResourceEntities(request);
+        contributeResourceEntities(request, response);
     }
 
-    private void contributeResourceEntities(final HstRequest request) {
+    private void contributeResourceEntities(final HstRequest request, final HstResponse response) {
         GenericResourceEntityBuilder builder = GenericResourceEntityBuilder.get(request.getRequestContext());
 
         final NewsDocument document = (NewsDocument) request.getRequestContext().getContentBean();
@@ -27,5 +28,8 @@ public class DemoNewsContentComponent extends EssentialsContentComponent {
         if (document != null) {
             builder.setResourceEntity("document", document);
         }
+
+        final HstURL componentRenderingURL = response.createComponentRenderingURL();
+        builder.setResourceEntity("componentRenderingURL", componentRenderingURL.toString());
     }
 }
