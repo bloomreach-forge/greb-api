@@ -46,6 +46,26 @@
     </constructor-arg>
   </bean>
 
+  <bean id="genericResourceEntityCustomResponseHeadersValveSettableHeaders"
+        class="org.springframework.beans.factory.config.ListFactoryBean">
+    <property name="sourceList">
+      <list>
+        <!--
+        <bean class="org.hippoecm.hst.util.DefaultKeyValue">
+          <constructor-arg value="Access-Control-Allow-Origin" />
+          <constructor-arg value="*" />
+        </bean>
+        -->
+      </list>
+    </property>
+  </bean>
+
+  <bean id="genericResourceEntityCustomResponseHeadersValve" parent="abstractValve"
+        class="org.hippoecm.hst.core.container.GenericResponseHeadersValve">
+    <property name="valveName" value="genericResourceEntityCustomResponseHeadersValve" />
+    <property name="settableHeaders" ref="genericResourceEntityCustomResponseHeadersValveSettableHeaders" />
+  </bean>
+
   <bean id="genericResourceEntityAggregationValve" parent="aggregationValve"
         class="com.onehippo.cms7.genericresource.entitybuilder.container.GenericResourceEntityAggregationValve">
     <property name="valveName" value="genericResourceEntityAggregationValve"/>
@@ -72,6 +92,7 @@
         <ref bean="esiPageInfoScanningValve" />
         <ref bean="pageCachingValve"/>
         <ref bean="componentRenderingValve" />
+        <ref bean="genericResourceEntityCustomResponseHeadersValve" />
         <ref bean="genericResourceEntityAggregationValve" />
       </list>
     </property>

@@ -136,6 +136,32 @@ You can nest as many objects as you want through container (either ```java.util.
     Map<Object> mapValue = builder.getMapResourceEntity(name);
  ```
 
+## CORS Support
+
+You can add CORS supporting response headers by adding the following in ```site/src/main/resources/META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder/greb-cors.xml``` (The XML file name in that folder can be different):
+
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+
+  <bean id="genericResourceEntityCustomResponseHeadersValveSettableHeaders"
+        class="org.springframework.beans.factory.config.ListFactoryBean">
+    <property name="sourceList">
+      <list>
+        <bean class="org.hippoecm.hst.util.DefaultKeyValue">
+          <constructor-arg value="Access-Control-Allow-Origin" />
+          <constructor-arg value="*" />
+        </bean>
+      </list>
+    </property>
+  </bean>
+
+</beans>
+```
+
+
 ## Special Output Format Query Parameter
 
 In any URL from the mount configured with the Generic Resource Entity Builder API (e.g, "resourceapi") pipeline,
