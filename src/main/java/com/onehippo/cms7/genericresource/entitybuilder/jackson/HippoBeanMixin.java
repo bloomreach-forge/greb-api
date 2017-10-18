@@ -11,9 +11,17 @@ import org.hippoecm.hst.content.beans.standard.HippoAvailableTranslationsBean;
 import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.hst.provider.jcr.JCRValueProvider;
 
+import com.fasterxml.jackson.annotation.JsonIdentityInfo;
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
+@JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
 public interface HippoBeanMixin extends HippoBean {
+
+    @JsonProperty("id")
+    @Override
+    public String getIdentifier();
 
     @JsonIgnore
     @Override
