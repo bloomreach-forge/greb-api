@@ -66,7 +66,7 @@ See the example ```contributeResourceEntities(HstRequest)``` method implementati
 
 ## Enabling Relevance (```TargetingUpdateValve```) in ```GenericResourceEntitySitePipeline```
 
-- Add an xml file in ```site/src/main/resources/META-INF/hst-assembly/overrides/``` folder. e.g, ```generic-resource-entity-site-pipeline-targeting.xml``` and add the following there:
+- Add an xml file: ``````site/src/main/resources/META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder/generic-resource-entity-site-pipeline-targeting.xml``` (The XML file name in that folder can be different).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
@@ -77,19 +77,26 @@ See the example ```contributeResourceEntities(HstRequest)``` method implementati
   <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
     <constructor-arg value="java.lang.Void" />
     <property name="targetObject">
-      <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines"/>
-        <property name="targetMethod" value="getPipeline"/>
-        <property name="arguments" value="GenericResourceEntitySitePipeline"/>
+      <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+        <constructor-arg value="org.hippoecm.hst.core.container.Pipeline" />
+        <property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines" />
+        <property name="targetMethod" value="getPipeline" />
+        <property name="arguments">
+          <list>
+            <value>GenericResourceEntitySitePipeline</value>
+          </list>
+        </property>
       </bean>
     </property>
-    <property name="targetMethod" value="addProcessingValve"/>
+    <property name="targetMethod" value="addProcessingValve" />
     <property name="arguments">
-      <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve">
-        <property name="valveName" value="targetingUpdateValve" />
-        <property name="afterValves" value="contextResolvingValve, localizationValve" />
-        <property name="beforeValves" value="actionValve, resourceServingValve" />
-      </bean>
+      <list>
+        <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve">
+          <property name="valveName" value="targetingUpdateValve" />
+          <property name="afterValves" value="contextResolvingValve, localizationValve" />
+          <property name="beforeValves" value="actionValve, resourceServingValve" />
+        </bean>
+      </list>
     </property>
   </bean>
 
