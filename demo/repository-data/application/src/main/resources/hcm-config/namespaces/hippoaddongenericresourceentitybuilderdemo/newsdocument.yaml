@@ -11,7 +11,7 @@ definitions:
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel', 'mix:referenceable']
-          jcr:uuid: 90166b03-b960-4162-ac10-aaae43534408
+          jcr:uuid: 8eb7832b-c002-45b3-9e6b-5901015197b5
           hipposysedit:node: true
           hipposysedit:supertype: ['hippoaddongenericresourceentitybuilderdemo:basedocument',
             'hippostd:relaxed', 'hippotranslation:translated']
@@ -81,12 +81,20 @@ definitions:
             hipposysedit:path: hippoaddongenericresourceentitybuilderdemo:location
             hipposysedit:primary: false
             hipposysedit:type: String
+          /relateddocs:
+            jcr:primaryType: hipposysedit:field
+            hipposysedit:mandatory: false
+            hipposysedit:multiple: true
+            hipposysedit:ordered: true
+            hipposysedit:path: hippoaddongenericresourceentitybuilderdemo:relateddocs
+            hipposysedit:primary: false
+            hipposysedit:type: hippo:mirror
       /hipposysedit:prototypes:
         jcr:primaryType: hipposysedit:prototypeset
         /hipposysedit:prototype:
           jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:newsdocument
           jcr:mixinTypes: ['mix:referenceable']
-          jcr:uuid: 931b5cb4-0a9f-4e3f-abcd-bbdbcb37ff27
+          jcr:uuid: 9fc36aa7-9703-46ee-a929-c9d81dc606e0
           hippo:related___pathreference: []
           hippoaddongenericresourceentitybuilderdemo:date: 0001-01-01T13:00:00+01:00
           hippoaddongenericresourceentitybuilderdemo:documenttype: news
@@ -100,15 +108,21 @@ definitions:
           hippostdpubwf:lastModifiedBy: ''
           hippotranslation:id: document-type-locale-id
           hippotranslation:locale: document-type-locale
+          hippoaddongenericresourceentitybuilderdemo:source: ''
+          hippoaddongenericresourceentitybuilderdemo:location: ''
+          hippoaddongenericresourceentitybuilderdemo:author: ''
           /hippoaddongenericresourceentitybuilderdemo:content:
             jcr:primaryType: hippostd:html
-            hippostd:content: <html><body></body></html>
+            hippostd:content: ''
           /hippoaddongenericresourceentitybuilderdemo:image:
             jcr:primaryType: hippogallerypicker:imagelink
             hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
             hippo:facets: []
             hippo:modes: []
             hippo:values: []
+          /hippoaddongenericresourceentitybuilderdemo:relateddocs:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: cafebabe-cafe-babe-cafe-babecafebabe
       /editor:templates:
         jcr:primaryType: editor:templateset
         /_default_:
@@ -187,5 +201,14 @@ definitions:
             field: image
             plugin.class: org.hippoecm.frontend.editor.plugins.field.NodeFieldPlugin
             wicket.id: ${cluster.id}.right.item
+            /cluster.options:
+              jcr:primaryType: frontend:pluginconfig
+          /relateddocs:
+            jcr:primaryType: frontend:plugin
+            caption: Releated Documents
+            field: relateddocs
+            hint: ''
+            plugin.class: org.hippoecm.frontend.editor.plugins.field.NodeFieldPlugin
+            wicket.id: ${cluster.id}.left.item
             /cluster.options:
               jcr:primaryType: frontend:pluginconfig

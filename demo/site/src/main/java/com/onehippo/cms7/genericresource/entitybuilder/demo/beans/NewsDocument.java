@@ -15,6 +15,7 @@ package com.onehippo.cms7.genericresource.entitybuilder.demo.beans;
  * limitations under the License.
  */
 import java.util.Calendar;
+import java.util.List;
 
 import org.hippoecm.hst.content.beans.Node;
 import org.hippoecm.hst.content.beans.standard.HippoDocument;
@@ -120,5 +121,8 @@ public class NewsDocument extends HippoDocument {
         return getProperty(SOURCE);
     }
 
+    public List<HippoDocument> getRelatedDocuments() {
+        return getLinkedBeans("hippoaddongenericresourceentitybuilderdemo:relateddocs", HippoDocument.class);
+    }
 }
 

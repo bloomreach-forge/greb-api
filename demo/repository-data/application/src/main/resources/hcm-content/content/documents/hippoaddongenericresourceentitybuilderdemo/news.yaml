@@ -24,11 +24,11 @@
         jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
         jcr:uuid: c580ac64-3874-4717-a6d9-e5ad72080abe
         hippo:name: The medusa news
-        /the-medusa-news:
+        /the-medusa-news[1]:
           jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:newsdocument
           jcr:mixinTypes: ['mix:referenceable']
           jcr:uuid: 72e174d6-84f3-414a-bdb4-53859f8d2882
-          hippo:availability: [live, preview]
+          hippo:availability: [live]
           hippoaddongenericresourceentitybuilderdemo:author: Alfred Anonymous
           hippoaddongenericresourceentitybuilderdemo:date: 2017-10-10T11:26:00-04:00
           hippoaddongenericresourceentitybuilderdemo:documenttype: news
@@ -46,9 +46,9 @@
           hippostd:state: published
           hippostdpubwf:createdBy: admin
           hippostdpubwf:creationDate: 2013-11-12T13:03:00+01:00
-          hippostdpubwf:lastModificationDate: 2013-11-12T13:04:00+01:00
+          hippostdpubwf:lastModificationDate: 2017-10-18T09:36:57.999-04:00
           hippostdpubwf:lastModifiedBy: admin
-          hippostdpubwf:publicationDate: 2013-11-12T13:04:00+01:00
+          hippostdpubwf:publicationDate: 2017-10-18T09:37:00.450-04:00
           hippotranslation:id: d519275a-006b-41a2-bf83-e04144c427de
           hippotranslation:locale: en
           /hippoaddongenericresourceentitybuilderdemo:content:
@@ -86,6 +86,135 @@
             hippo:facets: []
             hippo:modes: []
             hippo:values: []
+          /hippoaddongenericresourceentitybuilderdemo:relateddocs:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: b8f5eb45-7200-452a-b26e-3118a0dc60b8
+        /the-medusa-news[2]:
+          jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:newsdocument
+          jcr:mixinTypes: ['mix:referenceable', 'mix:versionable']
+          jcr:uuid: 912f0ba9-88b5-4b80-ac88-4ccef61a1089
+          hippo:availability: [preview]
+          hippoaddongenericresourceentitybuilderdemo:author: Alfred Anonymous
+          hippoaddongenericresourceentitybuilderdemo:date: 2017-10-10T11:26:00-04:00
+          hippoaddongenericresourceentitybuilderdemo:documenttype: news
+          hippoaddongenericresourceentitybuilderdemo:introduction: Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          hippoaddongenericresourceentitybuilderdemo:location: Rotterdam
+          hippoaddongenericresourceentitybuilderdemo:source: ''
+          hippoaddongenericresourceentitybuilderdemo:title: The medusa news
+          hippostd:state: unpublished
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T13:03:00+01:00
+          hippostdpubwf:lastModificationDate: 2017-10-18T09:36:57.999-04:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: d519275a-006b-41a2-bf83-e04144c427de
+          hippotranslation:locale: en
+          /hippoaddongenericresourceentitybuilderdemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum </p>
+
+                        </body>
+                        </html>
+          /hippoaddongenericresourceentitybuilderdemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: 4709f797-61ae-4c36-93d4-63b5d50fc200
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []
+          /hippoaddongenericresourceentitybuilderdemo:relateddocs:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: b8f5eb45-7200-452a-b26e-3118a0dc60b8
+        /the-medusa-news[3]:
+          jcr:primaryType: hippoaddongenericresourceentitybuilderdemo:newsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: ce6323cc-8808-467e-9dab-2cf48c044ab4
+          hippo:availability: []
+          hippoaddongenericresourceentitybuilderdemo:author: Alfred Anonymous
+          hippoaddongenericresourceentitybuilderdemo:date: 2017-10-10T11:26:00-04:00
+          hippoaddongenericresourceentitybuilderdemo:documenttype: news
+          hippoaddongenericresourceentitybuilderdemo:introduction: Lorem ipsum dolor
+            sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt
+            ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
+            exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
+            Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+            proident, sunt in culpa qui officia deserunt mollit anim id est laborum
+          hippoaddongenericresourceentitybuilderdemo:location: Rotterdam
+          hippoaddongenericresourceentitybuilderdemo:source: ''
+          hippoaddongenericresourceentitybuilderdemo:title: The medusa news
+          hippostd:state: draft
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T13:03:00+01:00
+          hippostdpubwf:lastModificationDate: 2017-10-18T09:36:42.028-04:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippotranslation:id: d519275a-006b-41a2-bf83-e04144c427de
+          hippotranslation:locale: en
+          /hippoaddongenericresourceentitybuilderdemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum</p>
+
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+                        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+                        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+                        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+                        dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                        sunt in culpa qui officia deserunt mollit anim id est laborum </p>
+
+                        </body>
+                        </html>
+          /hippoaddongenericresourceentitybuilderdemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: 4709f797-61ae-4c36-93d4-63b5d50fc200
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []
+          /hippoaddongenericresourceentitybuilderdemo:relateddocs:
+            jcr:primaryType: hippo:mirror
+            hippo:docbase: b8f5eb45-7200-452a-b26e-3118a0dc60b8
       /2013-harvest:
         jcr:primaryType: hippo:handle
         jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
