@@ -121,6 +121,7 @@ public class NewsDocument extends HippoDocument {
         return getProperty(SOURCE);
     }
 
+    //@JsonIgnore
     public List<HippoDocument> getRelatedDocuments() {
         return getLinkedBeans("hippoaddongenericresourceentitybuilderdemo:relateddocs", HippoDocument.class);
     }

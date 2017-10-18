@@ -48,7 +48,6 @@ public abstract class GenericResourceEntityBuilder {
 
     public abstract Map<String, Object> getMapResourceEntity(String name) throws GenericResourceEntityBuilderException;
 
-    @SuppressWarnings("unchecked")
     public abstract Object addResourceEntity(String name, Object resourceEntity)
             throws GenericResourceEntityBuilderException;
 
@@ -56,6 +55,8 @@ public abstract class GenericResourceEntityBuilder {
             throws GenericResourceEntityBuilderException;
 
     public abstract Object removeResourceEntity(String name) throws GenericResourceEntityBuilderException;
+
+    public abstract void ensureObjectMapperMixins(Map<Class<?>, Class<?>> mixins);
 
     public abstract void write(final ObjectMapper objectMapper, final Writer writer)
             throws GenericResourceEntityBuilderException, IOException;

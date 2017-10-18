@@ -25,14 +25,19 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
 
     private final Map<String, Object> resourceEntityMap;
 
+    private final Map<Class<?>, Class<?>> additionalMixins;
+
     DefaultGenericResourceEntityBuilder() {
         resourceEntityMap = new LinkedHashMap<>();
+        additionalMixins = new LinkedHashMap<>();
     }
 
+    @Override
     public Set<String> getResourceEntityNames() {
         return resourceEntityMap.keySet();
     }
 
+    @Override
     public Object getResourceEntity(String name) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
@@ -42,6 +47,8 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
         return resourceEntityMap.get(name);
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
     public Collection<Object> getCollectionResourceEntity(String name) throws GenericResourceEntityBuilderException {
         Object value = getResourceEntity(name);
 
@@ -49,13 +56,16 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
             if (value instanceof Collection) {
                 return ((Collection<Object>) value);
             } else {
-                throw new GenericResourceEntityBuilderException("A non-collection value exists by name, '" + name + "'.");
+                throw new GenericResourceEntityBuilderException(
+                        "A non-collection value exists by name, '" + name + "'.");
             }
         }
 
         return null;
     }
 
+    @SuppressWarnings("unchecked")
+    @Override
     public Map<String, Object> getMapResourceEntity(String name) throws GenericResourceEntityBuilderException {
         Object value = getResourceEntity(name);
 
@@ -71,6 +81,7 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
     }
 
     @SuppressWarnings("unchecked")
+    @Override
     public Object addResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
@@ -88,10 +99,12 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
             ((Collection<Object>) value).add(resourceEntity);
             return resourceEntity;
         } else {
-            throw new GenericResourceEntityBuilderException("A non-collection value already exists by name, '" + name + "'.");
+            throw new GenericResourceEntityBuilderException(
+                    "A non-collection value already exists by name, '" + name + "'.");
         }
     }
 
+    @Override
     public Object setResourceEntity(String name, Object resourceEntity) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
@@ -101,6 +114,7 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
         return resourceEntityMap.put(name, resourceEntity);
     }
 
+    @Override
     public Object removeResourceEntity(String name) throws GenericResourceEntityBuilderException {
         if (name == null) {
             throw new IllegalArgumentException("name must be a non-null value.");
@@ -110,9 +124,27 @@ class DefaultGenericResourceEntityBuilder extends GenericResourceEntityBuilder {
         return resourceEntityMap.remove(name);
     }
 
+    @Override
+    public void ensureObjectMapperMixins(Map<Class<?>, Class<?>> additionalMixins) {
+        if (additionalMixins == null || additionalMixins.isEmpty()) {
+            return;
+        }
+
+        this.additionalMixins.putAll(additionalMixins);
+    }
+
+    @Override
     public void write(final ObjectMapper objectMapper, final Writer writer)
             throws GenericResourceEntityBuilderException, IOException {
         try {
+            if (!additionalMixins.isEmpty()) {
+                additionalMixins.forEach((clazz, mixin) -> {
+                    if (objectMapper.findMixInClassFor(clazz) == null) {
+                        objectMapper.addMixIn(clazz, mixin);
+                    }
+                });
+            }
+
             objectMapper.writeValue(writer, resourceEntityMap);
         } catch (JsonGenerationException e) {
             throw new GenericResourceEntityBuilderException(e.getMessage(), e);
