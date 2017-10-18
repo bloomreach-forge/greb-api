@@ -66,7 +66,7 @@ See the example ```contributeResourceEntities(HstRequest)``` method implementati
 
 ## Enabling Relevance (```TargetingUpdateValve```) in ```GenericResourceEntitySitePipeline```
 
-- Add an xml file in ```site/src/main/resources/META-INF/hst-assembly/overrides/``` folder. e.g, ```generic-resource-entity-site-pipeline-targeting.xml``` and add the following there:
+- Add an xml file: ``````site/src/main/resources/META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder//generic-resource-entity-site-pipeline-targeting.xml``` (The XML file name in that folder can be different).
 
 ```xml
 <?xml version="1.0" encoding="UTF-8"?>
