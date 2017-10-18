@@ -77,19 +77,26 @@ See the example ```contributeResourceEntities(HstRequest)``` method implementati
   <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
     <constructor-arg value="java.lang.Void" />
     <property name="targetObject">
-      <bean class="org.springframework.beans.factory.config.MethodInvokingFactoryBean">
-        <property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines"/>
-        <property name="targetMethod" value="getPipeline"/>
-        <property name="arguments" value="GenericResourceEntitySitePipeline"/>
+      <bean class="org.hippoecm.hst.site.container.TypeDeterminedMethodInvokingFactoryBean">
+        <constructor-arg value="org.hippoecm.hst.core.container.Pipeline" />
+        <property name="targetObject" ref="org.hippoecm.hst.core.container.Pipelines" />
+        <property name="targetMethod" value="getPipeline" />
+        <property name="arguments">
+          <list>
+            <value>GenericResourceEntitySitePipeline</value>
+          </list>
+        </property>
       </bean>
     </property>
-    <property name="targetMethod" value="addProcessingValve"/>
+    <property name="targetMethod" value="addProcessingValve" />
     <property name="arguments">
-      <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve">
-        <property name="valveName" value="targetingUpdateValve" />
-        <property name="afterValves" value="contextResolvingValve, localizationValve" />
-        <property name="beforeValves" value="actionValve, resourceServingValve" />
-      </bean>
+      <list>
+        <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve">
+          <property name="valveName" value="targetingUpdateValve" />
+          <property name="afterValves" value="contextResolvingValve, localizationValve" />
+          <property name="beforeValves" value="actionValve, resourceServingValve" />
+        </bean>
+      </list>
     </property>
   </bean>
 
