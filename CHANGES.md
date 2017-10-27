@@ -1,6 +1,6 @@
 # hippo-addon-generic-resource-entity-builder
 
-## v2.0.0
+## v1.0.0
 
 ### New Features
 

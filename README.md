@@ -6,7 +6,7 @@ Hippo Addon Generic Resource Entity Builder
 
 | Add-on Version | CMS Version  |
 |:--------------:|:------------:|
-| 2.x            | 12.x         |
+| 1.x            | 12.x         |
 
 For release processes, see [Hippo Forge Release Process](https://onehippo-forge.github.io/release-process.html).
 
