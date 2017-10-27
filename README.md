@@ -4,9 +4,11 @@ Hippo Addon Generic Resource Entity Builder
 
 ## Release Version Compatibility
 
-| Plugin Version | CMS Version  |
+| Add-on Version | CMS Version  |
 |:--------------:|:------------:|
-| 0.9.x          | 12.x         |
+| 1.x            | 12.x         |
+
+For release processes, see [Hippo Forge Release Process](https://onehippo-forge.github.io/release-process.html).
 
 ## Build and install the module itself into local maven repository
 
@@ -16,7 +18,7 @@ Hippo Addon Generic Resource Entity Builder
 
 ## Running the demo locally
 
-The demo project is located udner demo/ folder. So, move to the demo/ folder to run it locally.
+The demo project is located under demo/ folder. So, move to the demo/ folder to run it locally.
 
 ```bash
     $ cd demo
@@ -66,6 +68,7 @@ See the example ```contributeResourceEntities(HstRequest)``` method implementati
 
 ## Enabling Relevance (```TargetingUpdateValve```) in ```GenericResourceEntitySitePipeline```
 
+Make sure that the Relevance module is installed before proceeding, otherwise you will get classNotFound errors.  
 - Add an xml file: ``````site/src/main/resources/META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder/generic-resource-entity-site-pipeline-targeting.xml``` (The XML file name in that folder can be different).
 
 ```xml

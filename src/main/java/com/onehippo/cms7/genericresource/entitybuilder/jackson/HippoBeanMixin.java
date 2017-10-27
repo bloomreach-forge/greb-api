@@ -17,59 +17,54 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.PropertyGenerator.class, property = "id")
-public interface HippoBeanMixin extends HippoBean {
+public interface HippoBeanMixin {
 
     @JsonProperty("id")
-    @Override
     public String getIdentifier();
 
     @JsonIgnore
-    @Override
     public Node getNode();
 
     @JsonIgnore
-    @Override
     public JCRValueProvider getValueProvider();
 
     @Deprecated
     @JsonIgnore
-    @Override
     public String getLocalizedName();
 
     @JsonIgnore
-    @Override
     public Map<String, Object> getProperties();
 
     @JsonIgnore
-    @Override
     public Map<String, Object> getProperty();
 
     @JsonIgnore
-    @Override
     public HippoBean getParentBean();
 
     @JsonIgnore
-    @Override
     public <T extends HippoBean> T getCanonicalBean();
 
     @JsonIgnore
-    @Override
+    public String getCanonicalPath();
+
+    @JsonIgnore
+    public String getCanonicalUUID();
+
+    @JsonIgnore
     public boolean isHippoDocumentBean();
 
     @JsonIgnore
-    @Override
     public boolean isHippoFolderBean();
 
     @JsonIgnore
-    @Override
     public boolean isLeaf();
 
     @JsonIgnore
-    @Override
     public <T extends HippoBean> HippoAvailableTranslationsBean<T> getAvailableTranslations();
 
     @JsonIgnore
-    @Override
     public Map<Object, Object> getEqualComparator();
 
+    @JsonIgnore
+    public String getComparePath();
 }

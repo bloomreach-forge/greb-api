@@ -9,7 +9,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public interface HippoHtmlBeanMixin extends HippoHtmlBean, HippoBeanMixin {
 
-    @JsonProperty
+    @JsonProperty("value")
     @Override
     public String getContent();
 
