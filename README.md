@@ -56,7 +56,7 @@ That's all!
 ## Generic Resource Entity Builder Mount Configuration
 
 Create an ```hst:mount``` node under the ```hst:root``` node. e.g, ```resourceapi```.
-And set ```@hst:mountalias``` to ```resourceapi``` for example, and set ```@hst:namedpipeline``` to ```GenericResourceEntitySitePipeline```.
+And set ```@hst:alias``` to ```resourceapi``` for example, and set ```@hst:namedpipeline``` to ```GenericResourceEntitySitePipeline```.
 
 See ```/hst:hst/hst:hosts/dev-localhost/localhost/hst:root/resourceapi``` node of the demo project through CMS Console for details.
 
@@ -141,7 +141,7 @@ You can nest as many objects as you want through container (either ```java.util.
 - You can retrieve a resource entity object whether it is a scalar value, object value, collection or map value:
 
 ```java
-    Object value = builder.getResourceEntity(name)
+    Object value = builder.getResourceEntity(name);
     Collection<Object> collectionValue = builder.getCollectionResourceEntity(name);
     Map<Object> mapValue = builder.getMapResourceEntity(name);
  ```
