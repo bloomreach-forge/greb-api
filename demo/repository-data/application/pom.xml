@@ -5,7 +5,7 @@
   <parent>
     <groupId>com.onehippo.cms7.demo</groupId>
     <artifactId>hippo-addon-generic-resource-entity-builder-demo-repository-data</artifactId>
-    <version>0.9.0-SNAPSHOT</version>
+    <version>1.0.0-SNAPSHOT</version>
   </parent>
 
   <name>Generic Resource Entity Builder Demo Repository Data For Application</name>
