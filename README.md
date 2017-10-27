@@ -4,9 +4,11 @@ Hippo Addon Generic Resource Entity Builder
 
 ## Release Version Compatibility
 
-| Plugin Version | CMS Version  |
+| Add-on Version | CMS Version  |
 |:--------------:|:------------:|
-| 0.9.x          | 12.x         |
+| 2.x            | 12.x         |
+
+For release processes, see [Hippo Forge Release Process](https://onehippo-forge.github.io/release-process.html).
 
 ## Build and install the module itself into local maven repository
 
