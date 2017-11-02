@@ -10,8 +10,13 @@ import org.hippoecm.hst.content.beans.standard.HippoBean;
 import org.hippoecm.hst.content.beans.standard.HippoDocumentBean;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonProperty;
 
 public interface HippoDocumentBeanMixin extends HippoDocumentBean, HippoBeanMixin {
+
+    @JsonProperty("handlePath")
+    @Override
+    String getCanonicalHandlePath();
 
     @JsonIgnore
     @Override

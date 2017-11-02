@@ -33,6 +33,9 @@ public interface HippoBeanMixin {
     public String getLocalizedName();
 
     @JsonIgnore
+    public String getPath();
+
+    @JsonIgnore
     public Map<String, Object> getProperties();
 
     @JsonIgnore
