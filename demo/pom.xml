@@ -12,7 +12,7 @@
   <description>Generic Resource Entity Builder Demo</description>
   <groupId>com.onehippo.cms7.demo</groupId>
   <artifactId>hippo-addon-generic-resource-entity-builder-demo</artifactId>
-  <version>1.0.1</version>
+  <version>1.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!-- 
