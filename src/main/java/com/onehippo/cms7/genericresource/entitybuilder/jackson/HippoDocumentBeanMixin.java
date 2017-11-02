@@ -14,7 +14,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 
 public interface HippoDocumentBeanMixin extends HippoDocumentBean, HippoBeanMixin {
 
-    @JsonProperty("path")
+    @JsonProperty("handlePath")
     @Override
     String getCanonicalHandlePath();
 
