@@ -7,19 +7,12 @@ import org.hippoecm.hst.content.beans.standard.HippoGalleryImageBean;
 import org.hippoecm.hst.content.beans.standard.HippoGalleryImageSetBean;
 
 import com.fasterxml.jackson.annotation.JsonIdentityInfo;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.ObjectIdGenerators;
 
 @JsonIdentityInfo(generator = ObjectIdGenerators.None.class)
 public interface HippoGalleryImageSetBeanMixin extends HippoGalleryImageSetBean, HippoDocumentBeanMixin {
-
-    @JsonProperty
-    @Override
-    String getCanonicalHandleUUID();
-
-    @JsonProperty
-    @Override
-    String getCanonicalHandlePath();
 
     @JsonProperty
     @Override
@@ -29,11 +22,11 @@ public interface HippoGalleryImageSetBeanMixin extends HippoGalleryImageSetBean,
     @Override
     public String getDescription();
 
-    @JsonProperty
+    @JsonIgnore
     @Override
     public HippoGalleryImageBean getThumbnail();
 
-    @JsonProperty
+    @JsonIgnore
     @Override
     public HippoGalleryImageBean getOriginal();
 
