@@ -20,6 +20,8 @@ import org.hippoecm.hst.content.beans.standard.HippoMirrorBean;
 import org.hippoecm.hst.content.beans.standard.HippoRequestBean;
 import org.hippoecm.hst.core.component.HstURL;
 import org.hippoecm.hst.core.linking.HstLink;
+import org.hippoecm.hst.core.sitemenu.EditableMenu;
+import org.hippoecm.hst.core.sitemenu.EditableMenuItem;
 import org.hippoecm.hst.core.sitemenu.HstSiteMenu;
 import org.hippoecm.hst.core.sitemenu.HstSiteMenuItem;
 import org.hippoecm.hst.provider.ValueProvider;
@@ -53,6 +55,8 @@ public class HstBeansExcludingObjectMapperDecorator {
         defaultMixins.put(HstLink.class, HstLinkMixin.class);
         defaultMixins.put(HstSiteMenuItem.class, HstSiteMenuItemMixin.class);
         defaultMixins.put(HstSiteMenu.class, HstSiteMenuMixin.class);
+        defaultMixins.put(EditableMenuItem.class, EditableMenuItemMixin.class);
+        defaultMixins.put(EditableMenu.class, EditableMenuMixin.class);
     }
 
     public Map<Class<?>, Class<?>> getDefaultMixins() {
