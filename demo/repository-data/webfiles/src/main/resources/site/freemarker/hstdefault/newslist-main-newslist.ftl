@@ -6,7 +6,7 @@
 <#if pageable?? && pageable.items?has_content>
 
   <div>
-    <a href="<@hst.link mount='resourceapi' path='${hstRequest.pathInfo}' />" target="_blank">Resource API Link</a>
+    <a href="<@hst.link mount='grebapi' path='${hstRequest.pathInfo}' />" target="_blank">GREB API Link</a>
   </div>
 
   <div>

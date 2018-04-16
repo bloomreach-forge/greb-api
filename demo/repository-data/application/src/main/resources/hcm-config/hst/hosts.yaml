@@ -13,8 +13,8 @@ definitions:
           jcr:primaryType: hst:mount
           hst:homepage: root
           hst:mountpoint: /hst:hst/hst:sites/hippoaddongenericresourceentitybuilderdemo
-          /resourceapi:
+          /grebapi:
             .meta:residual-child-node-category: content
             jcr:primaryType: hst:mount
             hst:namedpipeline: GenericResourceEntitySitePipeline
-            hst:alias: resourceapi
+            hst:alias: grebapi

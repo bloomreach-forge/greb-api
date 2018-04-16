@@ -5,7 +5,7 @@
 <#if document??>
 
   <div>
-    <a href="<@hst.link mount='resourceapi' hippobean=document />" target="_blank">Resource API Link</a>
+    <a href="<@hst.link mount='grebapi' hippobean=document />" target="_blank">GREB API Link</a>
   </div>
 
   <@hst.link var="link" hippobean=document/>
