@@ -14,7 +14,7 @@
   <name>Hippo Addon Generic Resource Entity Builder</name>
   <description>Hippo Addon Generic Resource Entity Builder</description>
   <artifactId>hippo-addon-generic-resource-entity-builder</artifactId>
-  <version>1.0.3</version>
+  <version>1.0.4-SNAPSHOT</version>
   <url>http://www.onehippo.com/</url>
   <inceptionYear>2017</inceptionYear>
 
