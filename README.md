@@ -34,10 +34,10 @@ Logs are located in target/tomcat8x/logs
 - Visit SITE at http://localhost:8080/site/
 - Click on "news" menu.
 - Click on "Resource API Link" link on the top. It will show the JSON output result from the configured
-  generic resource entity builder API ("resourceapi") mount for the same page.
+  generic resource entity builder API (e.g, "grebapi") mount for the same page.
 - Click on a news article.
 - Click on "Resource API Link" link on the top. It will show the JSON output result from the configured
-  generic resource entity builder API ("resourceapi") mount for the news article in the page.
+  generic resource entity builder API (e.g, "grebapi") mount for the news article in the page.
 
 ## Installation
 
@@ -55,10 +55,10 @@ That's all!
 
 ## Generic Resource Entity Builder Mount Configuration
 
-Create an ```hst:mount``` node under the ```hst:root``` node. e.g, ```resourceapi```.
-And set ```@hst:alias``` to ```resourceapi``` for example, and set ```@hst:namedpipeline``` to ```GenericResourceEntitySitePipeline```.
+Create an ```hst:mount``` node under the ```hst:root``` node. e.g, ```grebapi```.
+And set ```@hst:alias``` to ```grebapi``` for example, and set ```@hst:namedpipeline``` to ```GenericResourceEntitySitePipeline```.
 
-See ```/hst:hst/hst:hosts/dev-localhost/localhost/hst:root/resourceapi``` node of the demo project through CMS Console for details.
+See ```/hst:hst/hst:hosts/dev-localhost/localhost/hst:root/grebapi``` node of the demo project through CMS Console for details.
 
 ## Contributing Resource Entities in HstComponents
 
@@ -174,7 +174,7 @@ You can add CORS supporting response headers by adding the following in ```site/
 
 ## Special Output Format Query Parameter
 
-In any URL from the mount configured with the Generic Resource Entity Builder API (e.g, "resourceapi") pipeline,
+In any URL from the mount configured with the Generic Resource Entity Builder API (e.g, "grebapi") pipeline,
 if you add ```_format=html``` (any other value different from ```_format=json``` actually) query parameter, the pipeline will render the normal
 (HTML) output as same as how the parent mount produces.
 This can be useful if you want to get an HTML output for an HST Component Rendering URL, for instance.
