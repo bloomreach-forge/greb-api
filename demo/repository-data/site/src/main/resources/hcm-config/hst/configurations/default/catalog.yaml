@@ -11,7 +11,7 @@ definitions:
         hst:xtype: hst.item
       /newslist:
         jcr:primaryType: hst:containeritemcomponent
-        hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+        hst:componentclassname: com.onehippo.cms7.genericresource.entitybuilder.demo.components.DemoNewsListComponent
         hst:iconpath: images/essentials/catalog-component-icons/news-list.png
         hst:label: News List
         hst:template: newslist-main-newslist

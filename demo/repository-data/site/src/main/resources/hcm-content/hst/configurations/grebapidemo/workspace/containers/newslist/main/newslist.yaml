@@ -1,6 +1,6 @@
 /hst:hst/hst:configurations/grebapidemo/hst:workspace/hst:containers/newslist/main/newslist:
   jcr:primaryType: hst:containeritemcomponent
-  hst:componentclassname: org.onehippo.cms7.essentials.components.EssentialsNewsComponent
+  hst:componentclassname: com.onehippo.cms7.genericresource.entitybuilder.demo.components.DemoNewsListComponent
   hst:label: News List
   hst:parameternames: [hidePastEvents, documentTypes, sortField, sortOrder, includeSubtypes,
     showPagination, path, pageSize, documentDateField, hideFutureItems]

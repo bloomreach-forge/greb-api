@@ -13,6 +13,12 @@
   <description>Generic Resource Entity Builder Demo Site Components</description>
 
   <dependencies>
+
+    <dependency>
+      <groupId>com.bloomreach.cms.greb-api</groupId>
+      <artifactId>greb-api</artifactId>
+    </dependency>
+
     <dependency>
       <groupId>javax.servlet.jsp</groupId>
       <artifactId>jsp-api</artifactId>
