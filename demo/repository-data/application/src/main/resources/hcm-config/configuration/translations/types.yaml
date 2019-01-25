@@ -1,0 +1,90 @@
+definitions:
+  config:
+    /hippo:configuration/hippo:translations/hippo:types/grebapidemo:eventsdocument:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:content: Content
+        grebapidemo:date: Start date
+        grebapidemo:enddate: End date
+        grebapidemo:image: Image
+        grebapidemo:introduction: Introduction
+        grebapidemo:location: Location
+        grebapidemo:title: Title
+        jcr:name: Event
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:content: Inhoud
+        grebapidemo:date: Startdatum
+        grebapidemo:enddate: Einddatum
+        grebapidemo:image: Afbeelding
+        grebapidemo:introduction: Introductie
+        grebapidemo:location: Locatie
+        grebapidemo:title: Titel
+        jcr:name: Evenement
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:content: Contenu
+        grebapidemo:date: Date de début
+        grebapidemo:enddate: Date de fin
+        grebapidemo:image: Image
+        grebapidemo:introduction: Introduction
+        grebapidemo:location: Lieu
+        grebapidemo:title: Titre
+        jcr:name: Événement
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:content: Inhalt
+        grebapidemo:date: Startdatum
+        grebapidemo:enddate: Enddatum
+        grebapidemo:image: Abbildung
+        grebapidemo:introduction: Einführung
+        grebapidemo:location: Standort
+        grebapidemo:title: Titel
+        jcr:name: Event
+    /hippo:configuration/hippo:translations/hippo:types/grebapidemo:newsdocument:
+      jcr:primaryType: hipposys:resourcebundles
+      /en:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:author: Author
+        grebapidemo:content: Content
+        grebapidemo:date: Date
+        grebapidemo:image: Image
+        grebapidemo:introduction: Introduction
+        grebapidemo:location: Location
+        grebapidemo:source: Source
+        grebapidemo:title: Title
+        jcr:name: News Item
+      /nl:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:author: Auteur
+        grebapidemo:content: Inhoud
+        grebapidemo:date: Datum
+        grebapidemo:image: Afbeelding
+        grebapidemo:introduction: Introductie
+        grebapidemo:location: Locatie
+        grebapidemo:source: Bron
+        grebapidemo:title: Titel
+        jcr:name: Nieuwsbericht
+      /de:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:author: Verfasser
+        grebapidemo:content: Inhalt
+        grebapidemo:date: Datum
+        grebapidemo:image: Abbildung
+        grebapidemo:introduction: Einführung
+        grebapidemo:location: Standort
+        grebapidemo:source: Quelle
+        grebapidemo:title: Titel
+        jcr:name: News
+      /fr:
+        jcr:primaryType: hipposys:resourcebundle
+        grebapidemo:author: Auteur
+        grebapidemo:content: Contenu
+        grebapidemo:date: Date
+        grebapidemo:image: Image
+        grebapidemo:introduction: Introduction
+        grebapidemo:location: Lieu
+        grebapidemo:source: Source
+        grebapidemo:title: Titre
+        jcr:name: Message d'info

@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hst:hst/hst:configurations/grebapidemo/hst:catalog:
+      jcr:primaryType: hst:catalog
+      /grebapidemo-catalog:
+        jcr:primaryType: hst:containeritempackage

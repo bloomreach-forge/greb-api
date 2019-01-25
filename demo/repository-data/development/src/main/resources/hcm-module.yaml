@@ -1,0 +1,7 @@
+group: 
+  name: greb-api-demo
+  after: hippo-cms
+project: greb-api-demo
+module: 
+  name: greb-api-demo-repository-data-development
+  after: greb-api-demo-repository-data-application
