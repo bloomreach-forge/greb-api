@@ -68,6 +68,4 @@ public interface HippoBeanMixin {
     @JsonIgnore
     public Map<Object, Object> getEqualComparator();
 
-    @JsonIgnore
-    public String getComparePath();
 }
