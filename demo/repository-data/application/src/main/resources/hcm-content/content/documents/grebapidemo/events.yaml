@@ -1,0 +1,145 @@
+/content/documents/grebapidemo/events:
+  jcr:primaryType: hippostd:folder
+  jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+  jcr:uuid: 57af3b45-c089-45e4-a0ac-046bba3acb0d
+  hippostd:foldertype: [new-events-document, new-events-folder]
+  hippotranslation:id: c3f01b66-f03e-48bf-b3f8-cfebd7b3f6b7
+  hippotranslation:locale: en
+  /2019:
+    jcr:primaryType: hippostd:folder
+    jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+    jcr:uuid: dffbcf21-0f4d-4868-9dee-0a25dbb1df1c
+    hippostd:foldertype: [new-events-document, new-events-folder]
+    hippotranslation:id: c5e6daed-92b8-4cae-9100-b49de6eeb206
+    hippotranslation:locale: en
+    /01:
+      jcr:primaryType: hippostd:folder
+      jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
+      jcr:uuid: fb7af33e-e362-4bb7-929f-a3e75b1f3cbc
+      hippostd:foldertype: [new-events-document, new-events-folder]
+      hippotranslation:id: 16eaba0a-0b2e-41bc-9777-c8617ffaec40
+      hippotranslation:locale: en
+      /breakfast:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: b8f5eb45-7200-452a-b26e-3118a0dc60b8
+        hippo:name: Breakfast
+        /breakfast:
+          jcr:primaryType: grebapidemo:eventsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: be3ab106-3d8a-40e2-96c9-b6a1441acdb0
+          grebapidemo:date: 2013-11-12T08:00:00+01:00
+          grebapidemo:documenttype: event
+          grebapidemo:enddate: 2020-01-25T21:20:00+09:00
+          grebapidemo:introduction: Start the day with a nice breakfast.
+          grebapidemo:location: Room 101
+          grebapidemo:title: Breakfast
+          hippo:availability: [live, preview]
+          hippostd:holder: admin
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T11:00:00+01:00
+          hippostdpubwf:lastModificationDate: 2013-11-12T11:11:00+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2013-11-12T12:16:00+01:00
+          hippotranslation:id: ab3cd81b-5d4d-4682-9f5a-45cefbdd46ae
+          hippotranslation:locale: en
+          /grebapidemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+
+                        <p>Breakfast is served starting from 8:00 until 9:30.</p>
+
+                        </body>
+                        </html>
+          /grebapidemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: c8f03498-56eb-46c9-83b2-cf014f2e03d7
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []
+      /introduction-speech:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+        jcr:uuid: 18e36c35-429d-4fee-b76e-eeabcbfc08bb
+        hippo:name: Introduction speech
+        /introduction-speech:
+          jcr:primaryType: grebapidemo:eventsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 5bc84f49-75e4-4cb6-a4b7-5b1df94781de
+          grebapidemo:date: 2013-11-12T10:00:00+01:00
+          grebapidemo:documenttype: event
+          grebapidemo:enddate: 2020-01-25T21:20:00+09:00
+          grebapidemo:introduction: After breakfast there will be an introductory
+            speech.
+          grebapidemo:location: Room 400
+          grebapidemo:title: Introduction speech
+          hippo:availability: [live, preview]
+          hippostd:holder: admin
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T11:02:00+01:00
+          hippostdpubwf:lastModificationDate: 2013-11-12T11:16:00+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2013-11-12T12:16:00+01:00
+          hippotranslation:id: 2e072404-ef71-44d2-8010-5ecece3d3d79
+          hippotranslation:locale: en
+          /grebapidemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+
+                        <p>Speech will be about the workshop.</p>
+
+                        </body>
+                        </html>
+          /grebapidemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: 9f32434e-84e3-4150-a6f2-d89a67be2fb1
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []
+      /workshop:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: 7a29ec60-2689-48b2-aca2-49696c5c23eb
+        /workshop:
+          jcr:primaryType: grebapidemo:eventsdocument
+          jcr:mixinTypes: ['mix:referenceable']
+          jcr:uuid: 5c86591c-2e9e-497f-828b-e38e5257fbc4
+          grebapidemo:date: 2013-11-12T13:00:00+01:00
+          grebapidemo:documenttype: event
+          grebapidemo:enddate: 2020-01-25T21:20:00+09:00
+          grebapidemo:introduction: Workshop starts at 1:00
+          grebapidemo:location: Room 600
+          grebapidemo:title: Workshop
+          hippo:availability: [live, preview]
+          hippostd:holder: admin
+          hippostd:state: published
+          hippostdpubwf:createdBy: admin
+          hippostdpubwf:creationDate: 2013-11-12T11:16:00+01:00
+          hippostdpubwf:lastModificationDate: 2013-11-12T11:18:00+01:00
+          hippostdpubwf:lastModifiedBy: admin
+          hippostdpubwf:publicationDate: 2013-11-12T12:16:00+01:00
+          hippotranslation:id: 44ec8135-dd59-4dbf-bec7-ce056ba9f654
+          hippotranslation:locale: en
+          /grebapidemo:content:
+            jcr:primaryType: hippostd:html
+            hippostd:content: |-
+              <html>
+                        <body>
+                        <strong>Everybody </strong>
+                        <p>can join the workshop and start practicing what they learned during the last
+                        week.</p>
+
+                        </body>
+                        </html>
+          /grebapidemo:image:
+            jcr:primaryType: hippogallerypicker:imagelink
+            hippo:docbase: d035387b-f9ce-49f6-bcb0-9ab6915a2d5f
+            hippo:facets: []
+            hippo:modes: []
+            hippo:values: []

@@ -1,17 +1,17 @@
 /content/documents/administration/labels:
   jcr:primaryType: hippostd:folder
   jcr:mixinTypes: ['mix:referenceable']
-  jcr:uuid: 05d3834e-9a69-4fa0-b89e-08e2920d9812
+  jcr:uuid: 09067690-373c-497a-861a-18d066ac6c26
   hippostd:foldertype: [new-resource-bundle, new-untranslated-folder]
   /global:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
-    jcr:uuid: 235ba6b1-7896-4778-aa4e-1d2169619dc3
+    jcr:uuid: 5c9ab659-2c31-43e7-ac02-e56aba7f6505
     hippo:name: Global
     /global:
       jcr:primaryType: resourcebundle:resourcebundle
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: dabb3602-85fd-4e83-9e3a-abc57a727183
+      jcr:uuid: 1e648f62-ce46-4943-8fe7-8b0730f65afe
       hippo:availability: [live, preview]
       hippostd:state: published
       hippostdpubwf:createdBy: admin
@@ -22,16 +22,16 @@
       resourcebundle:descriptions: [Text shown in the global page footer.]
       resourcebundle:id: essentials.global
       resourcebundle:keys: [footer.text]
-      resourcebundle:messages: [©2017]
+      resourcebundle:messages: [©2019]
   /homepage:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
-    jcr:uuid: 04c23600-5ed1-4a51-98ab-f53382eec0c0
+    jcr:uuid: 696d8f17-0a4b-40be-acfb-b224c3541ed6
     hippo:name: Homepage
     /homepage:
       jcr:primaryType: resourcebundle:resourcebundle
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: 2d2a99b1-a739-4b4e-a043-975eef36d10b
+      jcr:uuid: b03030b1-b7fa-45b4-b0c8-fb80a96511f6
       hippo:availability: [live, preview]
       hippostd:state: published
       hippostdpubwf:createdBy: admin
@@ -44,19 +44,19 @@
       resourcebundle:id: essentials.homepage
       resourcebundle:keys: [homepage.title, homepage.text]
       resourcebundle:messages: [Home Page, 'Every website comes with its own styling
-          requirements. Hippo''s setup application can therefore not address site
-          styling. Instead, the generated pages use minimal styling to render the
-          content. It is the task of the Hippo developer to adjust the front-end to
-          the site''s needs.']
+          requirements. The BloomReach setup application can therefore not address
+          site styling. Instead, the generated pages use minimal styling to render
+          the content. It is the task of the project developer to adjust the front-end
+          to the site''s needs.']
   /pagenotfound:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
-    jcr:uuid: e8051187-b7b7-456f-8608-29918c838211
+    jcr:uuid: 47dc206f-8811-4dd6-8cba-f2a5823f8e94
     hippo:name: Page not found
     /pagenotfound:
       jcr:primaryType: resourcebundle:resourcebundle
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: aa26a86f-ad63-40d1-bdf1-a1d7e83029b1
+      jcr:uuid: 0477f625-c9a5-4207-8160-6f7ad93360fc
       hippo:availability: [live, preview]
       hippostd:state: published
       hippostdpubwf:createdBy: admin
@@ -69,17 +69,16 @@
       resourcebundle:id: essentials.pagenotfound
       resourcebundle:keys: [pagenotfound.title, pagenotfound.text]
       resourcebundle:messages: [Page not found (404), 'The page you requested was
-          not found. - [This text can be edited <a href="http://localhost:8080/cms/?1&path=/content/documents/administration/labels/pagenotfound"
-          target="_blank">here</a>.]']
+          not found. - [This text can be edited here: http://localhost:8080/cms/?1&path=/content/documents/administration/labels/pagenotfound]']
   /pagination:
     jcr:primaryType: hippo:handle
     jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
-    jcr:uuid: 36df5b8d-5e1d-4d36-82d8-64dca592efe4
+    jcr:uuid: 1e1f642e-945e-4956-8558-e65ef0255ca2
     hippo:name: Pagination
     /pagination:
       jcr:primaryType: resourcebundle:resourcebundle
       jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: c0e4a48c-5245-4290-a78a-1c3d872334f8
+      jcr:uuid: 087ba947-934d-429a-9d0d-0a6d04b00abd
       hippo:availability: [live, preview]
       hippostd:state: published
       hippostdpubwf:createdBy: admin

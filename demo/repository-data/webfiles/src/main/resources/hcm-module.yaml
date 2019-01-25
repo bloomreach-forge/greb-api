@@ -1,5 +1,5 @@
 group: 
-  name: hippo-addon-generic-resource-entity-builder-demo
-  after: hippo-cms
-project: hippo-addon-generic-resource-entity-builder-demo
-module: hippo-addon-generic-resource-entity-builder-demo-repository-data-webfiles
+  name: greb-api-demo
+project: greb-api-demo
+module:
+  name: greb-api-demo-repository-data-webfiles

@@ -1,6 +1,0 @@
-definitions:
-  config:
-    /hst:hst/hst:configurations/hippoaddongenericresourceentitybuilderdemo/hst:catalog:
-      jcr:primaryType: hst:catalog
-      /hippoaddongenericresourceentitybuilderdemo-catalog:
-        jcr:primaryType: hst:containeritempackage

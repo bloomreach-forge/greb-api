@@ -1,0 +1,7 @@
+/content/gallery/grebapidemo:
+  jcr:primaryType: hippogallery:stdImageGallery
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 7dfdc21d-e6ea-40d6-a8bc-b1804a07ba79
+  hippo:name: Generic Resource Entity Builder Demo
+  hippostd:foldertype: [new-image-folder]
+  hippostd:gallerytype: ['hippogallery:imageset']

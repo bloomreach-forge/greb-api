@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2017 Hippo B.V. (http://www.onehippo.com)
+  Copyright 2017-2019 BloomReach, Inc. (https://www.bloomreach.com)
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
   <modelVersion>4.0.0</modelVersion>
@@ -11,19 +11,20 @@
     <version>29.2</version>
   </parent>
 
-  <name>Hippo Addon Generic Resource Entity Builder</name>
-  <description>Hippo Addon Generic Resource Entity Builder</description>
-  <artifactId>hippo-addon-generic-resource-entity-builder</artifactId>
-  <version>1.0.3</version>
-  <url>http://www.onehippo.com/</url>
+  <name>Generic Resource Entity Builder</name>
+  <description>Generic Resource Entity Builder</description>
+  <groupId>com.bloomreach.cms.greb-api</groupId>
+  <artifactId>greb-api</artifactId>
+  <version>2.0.0</version>
+  <url>https://www.bloomreach.com/</url>
   <inceptionYear>2017</inceptionYear>
 
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 
-    <hippo.repository.version>5.0.2</hippo.repository.version>
-    <hippo.hst.version>5.0.2</hippo.hst.version>
+    <hippo.repository.version>13.0.0</hippo.repository.version>
+    <hippo.hst.version>13.0.0</hippo.hst.version>
 
     <commons-lang.version>2.6</commons-lang.version>
 

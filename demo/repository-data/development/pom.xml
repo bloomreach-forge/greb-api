@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.onehippo.cms7.demo</groupId>
-    <artifactId>hippo-addon-generic-resource-entity-builder-demo-repository-data</artifactId>
-    <version>1.0.3</version>
+    <groupId>com.bloomreach.cms.greb-api-demo</groupId>
+    <artifactId>greb-api-demo-repository-data</artifactId>
+    <version>2.0.0</version>
   </parent>
 
   <name>Generic Resource Entity Builder Demo Repository Data For Development</name>
   <description>Generic Resource Entity Builder Demo Repository Data For Development</description>
-  <artifactId>hippo-addon-generic-resource-entity-builder-demo-repository-data-development</artifactId>
+  <artifactId>greb-api-demo-repository-data-development</artifactId>
 
   <build>
     <defaultGoal>install</defaultGoal>
