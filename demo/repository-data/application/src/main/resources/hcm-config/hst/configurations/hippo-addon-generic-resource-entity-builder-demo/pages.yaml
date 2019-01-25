@@ -1,4 +1,0 @@
-definitions:
-  config:
-    /hst:hst/hst:configurations/hippoaddongenericresourceentitybuilderdemo/hst:pages:
-      jcr:primaryType: hst:pages

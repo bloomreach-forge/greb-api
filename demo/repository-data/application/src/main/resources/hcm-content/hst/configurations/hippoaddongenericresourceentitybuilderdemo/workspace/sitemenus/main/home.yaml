@@ -1,5 +1,0 @@
-/hst:hst/hst:configurations/hippoaddongenericresourceentitybuilderdemo/hst:workspace/hst:sitemenus/main/home:
-  .meta:order-before: events
-  jcr:primaryType: hst:sitemenuitem
-  jcr:uuid: 09fc21f8-d7f0-41ad-8582-15a1e5930cdf
-  hst:referencesitemapitem: root

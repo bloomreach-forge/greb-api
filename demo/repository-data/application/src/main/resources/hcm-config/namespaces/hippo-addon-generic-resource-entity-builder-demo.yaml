@@ -1,6 +1,0 @@
-definitions:
-  config:
-    /hippo:namespaces/hippoaddongenericresourceentitybuilderdemo:
-      jcr:primaryType: hipposysedit:namespace
-      jcr:mixinTypes: ['mix:referenceable']
-      jcr:uuid: ac632b3d-a82c-4cc7-9284-30ce7d5fb740
