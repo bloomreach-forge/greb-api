@@ -41,11 +41,15 @@
       </table>
     </section>
     <section name="Release Notes of 2.x">
+      <subsection name="2.0.1">
+        <ul>
+          <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-272'>HIPFORGE-272</a>] -         [GREB API] Move GREB API from Service Plugins to BloomReach Forge
+          </li>
+        </ul>
+      </subsection>
       <subsection name="2.0.0">
         <ul>
-          <li>Upgrade for Hippo CMS v13 compliancy.
-          </li>
-          <li>[<a href='https://issues.onehippo.com/browse/HIPFORGE-272'>HIPFORGE-272</a>] -         [GREB] Move GREB API from Service Plugins to BloomReach Forge
+          <li>[<a href='https://issues.onehippo.com/browse/SERVPLUG-57'>SERVPLUG-57</a>] -           [GREB] Upgrade for v13 compliancy
           </li>
         </ul>
       </subsection>

@@ -70,7 +70,7 @@
         </div>
         <div class="alert alert-info">
           <em>Note:</em>
-          Since v2.0.0, the maven coordinates have been changed
+          Since v2.0.1, the maven coordinates have been changed
           from <code>com.onehippo.cms7:hippo-addon-generic-resource-entity-builder</code>
           to <code>org.onehippo.forge.greb-api:greb-api</code>.
         </div>
