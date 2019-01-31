@@ -3,7 +3,7 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>com.bloomreach.cms.greb-api-demo</groupId>
+    <groupId>org.onehippo.forge.greb-api-demo</groupId>
     <artifactId>greb-api-demo-site</artifactId>
     <version>2.0.1-SNAPSHOT</version>
   </parent>
@@ -14,17 +14,17 @@
 
   <dependencies>
     <dependency>
-      <groupId>com.bloomreach.cms.greb-api-demo</groupId>
+      <groupId>org.onehippo.forge.greb-api-demo</groupId>
       <artifactId>greb-api-demo-repository-data-site</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.bloomreach.cms.greb-api-demo</groupId>
+      <groupId>org.onehippo.forge.greb-api-demo</groupId>
       <artifactId>greb-api-demo-repository-data-webfiles</artifactId>
       <version>${project.version}</version>
     </dependency>
     <dependency>
-      <groupId>com.bloomreach.cms.greb-api-demo</groupId>
+      <groupId>org.onehippo.forge.greb-api-demo</groupId>
       <artifactId>greb-api-demo-components</artifactId>
       <version>2.0.1-SNAPSHOT</version>
     </dependency>

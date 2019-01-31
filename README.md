@@ -6,6 +6,7 @@ Hippo Addon Generic Resource Entity Builder
 
 | Add-on Version | CMS Version  |
 |:--------------:|:------------:|
+| 2.x            | 13.x         |
 | 1.x            | 12.x         |
 
 For release processes, see [Hippo Forge Release Process](https://onehippo-forge.github.io/release-process.html).
@@ -94,7 +95,8 @@ Make sure that the Relevance module is installed before proceeding, otherwise yo
     <property name="targetMethod" value="addProcessingValve" />
     <property name="arguments">
       <list>
-        <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve">
+        <bean class="com.onehippo.cms7.targeting.hst.container.TargetingUpdateValve"
+              init-method="initialize" destroy-method="destroy">
           <property name="valveName" value="targetingUpdateValve" />
           <property name="afterValves" value="contextResolvingValve, localizationValve" />
           <property name="beforeValves" value="actionValve, resourceServingValve" />

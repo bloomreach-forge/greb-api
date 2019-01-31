@@ -3,14 +3,14 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>com.onehippo.cms7</groupId>
-    <artifactId>hippo-cms7-enterprise-release</artifactId>
+    <groupId>org.onehippo.cms7</groupId>
+    <artifactId>hippo-cms7-release</artifactId>
     <version>13.0.0</version>
   </parent>
 
   <name>Generic Resource Entity Builder Demo</name>
   <description>Generic Resource Entity Builder Demo</description>
-  <groupId>com.bloomreach.cms.greb-api-demo</groupId>
+  <groupId>org.onehippo.forge.greb-api-demo</groupId>
   <artifactId>greb-api-demo</artifactId>
   <version>2.0.1-SNAPSHOT</version>
   <packaging>pom</packaging>
@@ -82,12 +82,9 @@
       <url>https://maven.onehippo.com/maven2/</url>
     </repository>
     <repository>
-      <id>hippo-maven2-enterprise</id>
-      <name>Hippo Maven 2 Enterprise</name>
-      <url>https://maven.onehippo.com/maven2-enterprise/</url>
-      <releases>
-        <updatePolicy>never</updatePolicy>
-      </releases>
+      <id>hippo-maven2-forge</id>
+      <name>Hippo Maven 2 Forge Repository</name>
+      <url>http://maven.onehippo.com/maven2-forge/</url>
     </repository>
   </repositories>
 
@@ -96,7 +93,7 @@
     <dependencies>
 
       <dependency>
-        <groupId>com.bloomreach.cms.greb-api</groupId>
+        <groupId>org.onehippo.forge.greb-api</groupId>
         <artifactId>greb-api</artifactId>
         <version>${greb-api.version}</version>
       </dependency>
