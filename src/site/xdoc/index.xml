@@ -1,0 +1,306 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE document PUBLIC
+  "-//Apache Software Foundation//DTD XDOC 1.0//EN"
+  "http://maven.apache.org/dtd/xdoc_1_0.dtd">
+<!--
+  Copyright 2017-2019 BloomReach, Inc. (https://www.bloomreach.com)
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+       http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+-->
+<document>
+  <properties>
+    <title>GREB API</title>
+  </properties>
+  <body>
+
+    <section name="GREB API">
+
+      <subsection name="Introduction">
+        <p>
+          The GREB (Generic Resource Entity Builder) API Add-on enables you to provide a simple,
+          flexible JSON data producing application using the standard HstComponent code.
+        </p>
+        <div>
+          <img src="images/grebe.png" />
+        </div>
+        <p>
+          (By courtesy of <a href="https://www.flickr.com/photos/ferranp/">Ferran Pestaña</a>,
+          licensed by <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC BY-SA 2.0</a>)
+        </p>
+        <p>
+          Suppose you simply want to produce content data in JSON output for any REST API clients
+          (single page applicaton or server-side application) quickly in a very flexible way without having to
+          be concerned about considering standards such as JAX-RS or any other restricitions. Also, suppose you
+          or your colleages already know how to implement standard <code>HstComponent</code>s and retrieve content there and
+          so you simply want to implement even RESTful services using the same technology, <code>HstComponent</code>s.
+        </p>
+        <p>
+          In this case, GREB (Generic Resource Entity Builder) API can be a good technical choice.
+        </p>
+        <p>
+          Please see <a href="install.html">Install</a> page to install this addon module onto your project.
+          Also see the <a href="release-notes.html">Release Notes</a> to find the proper version for your project.
+        </p>
+      </subsection>
+
+      <subsection name="What is GREB API?">
+        <p>
+          GREB API is simply a new built-in HST-2 <code>Pipeline</code> to do almost the same things as the default HST-2 Site
+          <code>Pipeline</code>, except of the following:
+        </p>
+        <ul>
+          <li>
+            The <code>Pipeline</code> of GREB API consists of the same <code>Valve</code>s, but overrides the
+            <code>AggregationValve</code> to produce JSON output instead of the default (HTML) output.
+          </li>
+          <li>
+            As it doesn't need to aggregate all the output from templates of each <code>HstComponent</code>, it doesn't executes
+            all the rendering templates of each <code>HstComponent</code>, After executing <code>#doBeforeRender(HstRequest, HstResponse)</code>
+            on each <code>HstComponent</code>, it stops processing and aggregates all the contributed resource entities and to
+            produce an aggregated JSON result to client.
+          </li>
+          <li>
+            Each <code>HstComponent</code> class can (optionally) contribute any resource entity objects by using GREB API in
+            its code (e.g, <code>#doBeforeRender(HstRequest, HstResponse)</code>). In the overriden <code>AggregationValve</code>, GREB API
+            will collect all the contributed resource entity objects based on the contribution paths and serialize
+            the resource entity objects by using Jackson (v2) library.
+          </li>
+        </ul>
+        <p>Here's an architectural view.</p>
+        <div>
+          <img src="images/greb_api_cnc.png" />
+        </div>
+        <p>
+          Bascially, you need to configure a separate mount (mapped to "hst:root/grebapi", for example) for GREB API,
+          under your default site pipeline (mapped to "hst:root", for example).
+          So the GREB API mount (e.g, "hst:root/grebapi") will inherit everything from the parent mount (e.g, "hst:root"),
+          including sitemap, pages, components, etc.
+          So, the GREB API mount and its Pipeline will use the same configuration and the same <code>HstComponent</code>s.
+        </p>
+        <p>
+          When the GREB API mount is requested by a REST Client (e.g, http://localhost:8080/site/grebapi/a/b/c.html),
+          the delivery tier will invoke the same sitemap item, page and components, not templates.
+          After invoking <code>#doBeforeRender(HstRequest, HstResponse)</code> on each HstComponent,
+          it collects all the contributed resource entity objects from each HstComponent and aggregate the objects
+          into a JSON output to the REST Client.
+        </p>
+      </subsection>
+
+      <subsection name="How to Contribute Resource Entity Objects?">
+        <p>
+          You can contribute any objects (POJOs or any JSON-serializable objects by Jackson v2 library)
+          in <code>HstComponent</code> code or any other code involved in HST-2 request processing.
+        </p>
+        <p>
+          If you don't contribute any objects in your code (e.g, <code>HstComponent</code>s),
+          the GREB API pipeline will produce an empty JSON object by default:
+        </p>
+        <div class="brush: javascript">
+        <source><![CDATA[
+{
+}
+        ]]></source>
+        </div>
+        <p>
+          To contribute an object, you should get
+          <code>com.onehippo.cms7.genericresource.entitybuilder.GenericResourceEntityBuilder</code> instance first:
+        </p>
+        <div class="brush: java">
+        <source><![CDATA[
+    GenericResourceEntityBuilder builder = GenericResourceEntityBuilder.get(RequestContextProvider.get());
+        ]]></source>
+        </div>
+        <p>
+          You can contribute any scalar values on specific paths like the folloiwng:
+        </p>
+        <div class="brush: java">
+        <source><![CDATA[
+    builder.addResourceEntity("title", document.getTitle());
+    builder.addResourceEntity("timestamp", System.currentTimeMillis());
+        ]]></source>
+        </div>
+        <p>
+          As two objects were contributed with paths, then the JSON output will look like this:
+        </p>
+        <div class="brush: javascript">
+        <source><![CDATA[
+{
+  "title": "Hello, World!",
+  "timestamp": 1479249799770
+}
+        ]]></source>
+        </div>
+        <p>
+          You can contribute any POJO or any Java objects that can be serialized to JSON by using Jackson v2 library:
+        </p>
+        <div class="brush: java">
+        <source><![CDATA[
+    builder.addResourceEntity("document", document);
+        ]]></source>
+        </div>
+        <p>
+          Now, the JSON output will look like this:
+        </p>
+        <div class="brush: javascript">
+        <source><![CDATA[
+{
+  "title": "Hello, World!",
+  "timestamp": 1479249799770,
+  "document": {
+    "title": "The medusa news",
+    "introduction": "This is a news article.",
+    // ...
+  }
+}
+        ]]></source>
+        </div>
+        <p>
+          If a Java object is contributed, then GREB API simply serialize it into JSON using Jackson v2 library.
+          Therefore, you should make sure that your Java objects to contribute are serializable in Jackson v2 library.
+          Consider using Jackson annotations if you want to exclude some properties or control the serializations.
+        </p>
+      </subsection>
+
+      <subsection name="How to Contribute Resource Entity Objects in a nested path?">
+        <p>
+          You can wrap your resource entity objects in either <code>java.util.Collection</code>
+          (such as <code>java.util.List</code> or <code>java.util.Set</code>) or
+          <code>java.util.Map</code> like the following example:
+        </p>
+        <div class="brush: java">
+        <source><![CDATA[
+    List<Object> references = new LinkedList<>();
+    references.add(referenceDoc1);
+    references.add(referenceDoc2);
+    builder.addResourceEntity("references", references);
+
+    Map<String, Object> images = new LinkedHashMap<>();
+    images.put("portrait", portrait);
+    images.put("landscape", landscape);
+    builder.addResourceEntity("images", images);
+        ]]></source>
+        </div>
+        <p>
+          Now, the JSON output will look like this:
+        </p>
+        <div class="brush: javascript">
+        <source><![CDATA[
+{
+  "title": "Hello, World!",
+  "timestamp": 1479249799770,
+  "document": {
+    "title": "The medusa news",
+    "introduction": "This is a news article.",
+    // ...
+  },
+  "references": [
+    {
+      "title": "Referenced Document 1",
+      // ...
+    },
+    {
+      "title": "Referenced Document 2",
+      // ...
+    }
+  ],
+  "images": {
+    "portrait": {
+      // SNIP
+    },
+    "landscape": {
+      // SNIP
+    }
+  }
+}
+        ]]></source>
+        </div>
+        <p>
+          You can nest objects as deep as you want through container
+          (either <code>java.util.Collection</code> or <code>java.util.Map</code>) objects.
+        </p>
+        <p>
+          You can also retrieve a resource entity object whether it is a scalar value, object value, collection or map value:
+        </p>
+        <div class="brush: java">
+        <source><![CDATA[
+    Object value = builder.getResourceEntity(name);
+    Collection<Object> collectionValue = builder.getCollectionResourceEntity(name);
+    Map<Object> mapValue = builder.getMapResourceEntity(name);
+        ]]></source>
+        </div>
+      </subsection>
+
+      <subsection name="JSON Serialization Support for Built-in HST-2 Objects">
+        <p>
+          GREB API takes care of JSON serialization on built-in HST-2 objects such as:
+        </p>
+        <ul>
+          <li>
+            Any classes extending <code>HippoBean</code> interface. e.g, HST-2 Content Beans, generated manually
+            or through Essentials for each document type, built-in HST-2 Content Beans for images, assets, folders, html, mirror, etc.
+          </li>
+          <li>
+            HST-2 Site Menu and Menu Item objects.
+          </li>
+          <li>
+            HST-2 URL objects and HstLink objects.
+          </li>
+        </ul>
+        <p>
+          Therefore, you can contribute objects in those categories directly without having to wrap it to new POJO objects.
+        </p>
+      </subsection>
+
+      <subsection name="Custom Jackson Mixins to Customize JSON Serialization">
+        <p>
+          GREB API support customizing JSON serialization on specific beans
+          by adding custom <a href="https://github.com/FasterXML/jackson-docs/wiki/JacksonMixInAnnotations">Jackson Mixins</a>
+          for the specific bean types.
+        </p>
+        <p>
+          In order to register your custom Jackson Mixin classes (or interfaces) with Jackson annotations,
+          override the following beans in an Spring Beans assembly overriding XML file under
+          <code>site/components/src/resources/META-INF/hst-assembly/overrides/addon/com/onehippo/cms7/genericresource/entitybuilder/</code>
+          folder (e.g, <code>my-custom-mixins.xml</code>) like the following example:
+        </p>
+        <div class="brush: xml">
+        <source><![CDATA[
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.1.xsd">
+ 
+  <bean id="genericResourceEntityJacksonObjectMapperExtraMixins"
+        class="org.springframework.beans.factory.config.MapFactoryBean">
+    <property name="sourceMap">
+      <map>
+        <!-- Adding Jackson Mixin class, MyBeanMixin, for MyBean class type. -->
+        <entry key="org.example.beans.MyBean" value="org.example.beans.jackson.MyBeanMixin" />
+        <!-- SNIP -->
+      </map>
+    </property>
+  </bean>
+ 
+</beans>
+        ]]></source>
+        </div>
+        <p>
+          This also allows you to override the built-in default Jackson Mixins for built-in types
+          (such as <code>HippoGalleryImageSetBean</code>, <code>HippoGalleryImageBean</code>, etc.)
+          by your custom Jacksion Mixins.
+        </p>
+      </subsection>
+
+    </section>
+  </body>
+</document>

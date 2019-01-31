@@ -27,13 +27,14 @@
   <description>Generic Resource Entity Builder</description>
   <groupId>org.onehippo.forge.greb-api</groupId>
   <artifactId>greb-api</artifactId>
-  <version>2.0.1-SNAPSHOT</version>
+  <version>2.0.0-SNAPSHOT</version>
   <url>https://www.bloomreach.com/</url>
   <inceptionYear>2017</inceptionYear>
 
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.build.javaVersion>1.8</project.build.javaVersion>
 
     <hippo.repository.version>13.0.0</hippo.repository.version>
     <hippo.hst.version>13.0.0</hippo.hst.version>
@@ -42,6 +43,25 @@
 
     <junit.version>4.12</junit.version>
     <easymock.version>3.4</easymock.version>
+
+    <maven-plugin-plugin.version>3.4</maven-plugin-plugin.version>
+    <maven-plugin-tools-ant.version>3.4</maven-plugin-tools-ant.version>
+
+    <plugin.compiler.version>3.1</plugin.compiler.version>
+    <plugin.clean.version>2.5</plugin.clean.version>
+    <plugin.deploy.version>2.8.1</plugin.deploy.version>
+    <plugin.install.version>2.5.1</plugin.install.version>
+    <plugin.jar.version>2.4</plugin.jar.version>
+    <plugin.javadoc.version>2.9.1</plugin.javadoc.version>
+    <plugin.jxr.version>2.3</plugin.jxr.version>
+    <plugin.pmd.version>3.1</plugin.pmd.version>
+    <plugin.project-info-reports.version>2.7</plugin.project-info-reports.version>
+    <plugin.release.version>2.5</plugin.release.version>
+    <plugin.resources.version>2.6</plugin.resources.version>
+    <plugin.site.version>3.6</plugin.site.version>
+    <plugin.source.version>2.2.1</plugin.source.version>
+    <plugin.surefire.version>2.17</plugin.surefire.version>
+    <plugin.surefire-report.version>2.17</plugin.surefire-report.version>
 
   </properties>
 
@@ -59,6 +79,11 @@
       <name>Hippo maven 2 repository.</name>
       <url>http://maven.onehippo.com/maven2/</url>
     </repository>
+    <repository>
+      <id>hippo-maven2-forge</id>
+      <name>Hippo Maven 2 Forge Repository</name>
+      <url>http://maven.onehippo.com/maven2-forge/</url>
+    </repository>
   </repositories>
 
   <scm>
@@ -66,6 +91,32 @@
     <developerConnection>scm:git:https://github.com/bloomreach-forge/greb-api.git</developerConnection>
     <url>https://github.com/bloomreach-forge/greb-api</url>
   </scm>
+
+  <distributionManagement>
+    <repository>
+      <name>Hippo Maven 2 Forge Repository</name>
+      <id>hippo-maven2-forge</id>
+      <url>https://maven.onehippo.com/content/repositories/forge-releases/</url>
+      <uniqueVersion>false</uniqueVersion>
+    </repository>
+  </distributionManagement>
+
+  <issueManagement>
+    <url>https://issues.onehippo.com/projects/HIPFORGE</url>
+  </issueManagement>
+
+  <developers>
+    <developer>
+      <name>Woonsan Ko</name>
+      <id>woonsanko</id>
+      <email>woonsan DOT ko AT bloomreach DOT com</email>
+      <organization>BloomReach</organization>
+      <roles>
+        <role>Java Developer</role>
+      </roles>
+      <timezone>-5</timezone>
+    </developer>
+  </developers>
 
   <dependencies>
 
@@ -134,5 +185,95 @@
     </dependency>
 
   </dependencies>
+
+  <build>
+
+    <defaultGoal>package</defaultGoal>
+
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>${plugin.compiler.version}</version>
+        <configuration>
+          <source>${project.build.javaVersion}</source>
+          <target>${project.build.javaVersion}</target>
+        </configuration>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-clean-plugin</artifactId>
+        <version>${plugin.clean.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-install-plugin</artifactId>
+        <version>${plugin.install.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-deploy-plugin</artifactId>
+        <version>${plugin.deploy.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>${plugin.jar.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>${plugin.surefire.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-resources-plugin</artifactId>
+        <version>${plugin.resources.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-site-plugin</artifactId>
+        <version>${plugin.site.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>${plugin.release.version}</version>
+      </plugin>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-source-plugin</artifactId>
+        <version>${plugin.source.version}</version>
+        <executions>
+          <execution>
+            <id>attach-sources</id>
+            <phase>verify</phase>
+            <goals>
+              <goal>jar-no-fork</goal>
+            </goals>
+          </execution>
+        </executions>
+      </plugin>
+    </plugins>
+
+  </build>
+
+  <profiles>
+    <profile>
+      <!-- For generating/publishing GitHub Site Pages into /docs/ folder on master branch only -->
+      <id>github.pages</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-site-plugin</artifactId>
+            <configuration>
+              <outputDirectory>docs</outputDirectory>
+            </configuration>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>
+  </profiles>
 
 </project>
