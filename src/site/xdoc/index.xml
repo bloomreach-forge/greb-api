@@ -27,7 +27,7 @@
 
       <subsection name="Introduction">
         <p>
-          The GREB (Generic Resource Entity Builder) API Add-on enables you to provide a simple,
+          The GREB (Generic Resource Entity Builder) API module enables you to provide a simple,
           flexible JSON data producing application using the standard HstComponent code.
         </p>
         <div>
