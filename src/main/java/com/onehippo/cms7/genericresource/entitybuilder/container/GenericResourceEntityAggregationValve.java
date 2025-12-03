@@ -1,5 +1,5 @@
 /*
- *  Copyright 2017-2019 BloomReach, Inc. (https://www.bloomreach.com)
+ *  Copyright 2017-2025 BloomReach, Inc. (https://www.bloomreach.com)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -19,10 +19,11 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.Map;
 
-import javax.servlet.http.HttpServletResponse;
+import jakarta.servlet.http.HttpServletResponse;
 
 import org.apache.commons.io.IOUtils;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
+import org.apache.commons.lang3.Strings;
 import org.hippoecm.hst.container.RequestContextProvider;
 import org.hippoecm.hst.core.component.HstRequest;
 import org.hippoecm.hst.core.component.HstResponse;
@@ -40,7 +41,7 @@ import com.onehippo.cms7.genericresource.entitybuilder.GenericResourceEntityBuil
 
 public class GenericResourceEntityAggregationValve extends AggregationValve {
 
-    private static Logger log = LoggerFactory.getLogger(GenericResourceEntityAggregationValve.class);
+    private static final Logger log = LoggerFactory.getLogger(GenericResourceEntityAggregationValve.class);
 
     private static final String DEFAULT_OUTPUT_FORMAT_PARAM_NAME = "_format";
     private static final String OUTPUT_FORMAT_JSON = "JSON";
@@ -78,7 +79,7 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
         if (StringUtils.isNotBlank(paramName)) {
             final String paramValue = requestContext.getServletRequest().getParameter(paramName);
 
-            if (StringUtils.isNotBlank(paramValue) && !StringUtils.equalsIgnoreCase(OUTPUT_FORMAT_JSON, paramValue)) {
+            if (StringUtils.isNotBlank(paramValue) && ! Strings.CI.equals(OUTPUT_FORMAT_JSON, paramValue)) {
                 super.processWindowsRender(requestContainerConfig, sortedComponentWindows, requestMap, responseMap);
                 return;
             }
