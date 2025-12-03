@@ -1,5 +1,5 @@
 /*
- *  Copyright 2017-2019 BloomReach, Inc. (https://www.bloomreach.com)
+ *  Copyright 2017-2025 BloomReach, Inc. (https://www.bloomreach.com)
  *
  *  Licensed under the Apache License, Version 2.0 (the "License");
  *  you may not use this file except in compliance with the License.
@@ -24,11 +24,11 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-import org.apache.commons.lang.StringUtils;
 
 import com.fasterxml.jackson.core.JsonGenerationException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
+import org.apache.commons.lang3.StringUtils;
 
 /**
  * Default Generic Resource Entity Builder implementation.
