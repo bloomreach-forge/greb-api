@@ -1,3 +1,9 @@
+TEST by calling following URLs:
+===============
+
+http://localhost:8080/site/grebapi/news/2025/12/the-gastropoda-news.html
+http://localhost:8080/site/grebapi/news/
+
 Running Locally
 ===============
 
