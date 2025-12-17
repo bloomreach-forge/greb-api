@@ -3,20 +3,21 @@
   <modelVersion>4.0.0</modelVersion>
 
   <parent>
-    <groupId>org.onehippo.forge.greb-api-demo</groupId>
-    <artifactId>greb-api-demo</artifactId>
-    <version>2.0.2-SNAPSHOT</version>
+    <groupId>org.example</groupId>
+    <artifactId>grebapidemo</artifactId>
+    <version>3.0.1-SNAPSHOT</version>
   </parent>
 
-  <name>Generic Resource Entity Builder Demo Repository Data</name>
-  <description>Generic Resource Entity Builder Demo Repository Data</description>
-  <artifactId>greb-api-demo-repository-data</artifactId>
+  <name>grebapidemo Repository Data</name>
+  <description>grebapidemo Repository Data</description>
+  <artifactId>grebapidemo-repository-data</artifactId>
   <packaging>pom</packaging>
 
   <modules>
     <module>application</module>
     <module>development</module>
     <module>site</module>
+    <module>site-development</module>
     <module>webfiles</module>
   </modules>
 

@@ -1,0 +1,6 @@
+site: grebapidemo
+group: grebapidemo
+project: grebapidemo
+module:
+  name: grebapidemo-repository-data-site-development
+  after: grebapidemo-repository-data-site

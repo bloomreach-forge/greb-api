@@ -1,5 +1,5 @@
 /hst:hst/hst:configurations/grebapidemo/hst:workspace/hst:containers/newspage/main/content:
   jcr:primaryType: hst:containeritemcomponent
-  hst:componentclassname: com.onehippo.cms7.genericresource.entitybuilder.demo.components.DemoNewsContentComponent
+  hst:componentclassname: org.example.components.DemoNewsContentComponent
+  hst:label: Content
   hst:template: newspage-main
-  hst:xtype: hst.item

@@ -1,23 +1,26 @@
 /content/documents/grebapidemo/news:
   jcr:primaryType: hippostd:folder
   jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
-  jcr:uuid: af957a75-dccb-417d-b82f-bfe32c3dc8e6
+  jcr:uuid: 1a92d383-c9ae-4267-a812-b9b6bf9ea651
   hippostd:foldertype: [new-news-document, new-news-folder]
-  hippotranslation:id: 35d65e1f-ec60-4644-8fc0-bf918a3c1ce2
+  hippostd:hasfolders: true
+  hippotranslation:id: c2e1f84b-dc19-4ee7-9d82-434985dae456
   hippotranslation:locale: en
-  /2019:
+  /2025:
     jcr:primaryType: hippostd:folder
     jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
-    jcr:uuid: a65385a9-9f55-46c8-b5f9-98226bfa1fb6
+    jcr:uuid: 8918892a-6143-429b-af4c-c74e81343a70
     hippostd:foldertype: [new-news-document, new-news-folder]
-    hippotranslation:id: 2cca471e-fe6f-4d37-bf2c-42f7d11c53c8
+    hippostd:hasfolders: true
+    hippotranslation:id: b9e4465d-f3f6-4f5f-b40f-fe5487de5461
     hippotranslation:locale: en
-    /01:
+    /12:
       jcr:primaryType: hippostd:folder
       jcr:mixinTypes: ['hippotranslation:translated', 'mix:referenceable']
-      jcr:uuid: fd325df4-1467-4ee6-bec4-0e5ba5a598fe
+      jcr:uuid: cf832ae1-8254-466b-ab44-d7327b1c72f5
       hippostd:foldertype: [new-news-document, new-news-folder]
-      hippotranslation:id: 0a30b723-63c2-443e-a498-10e380251a71
+      hippostd:hasfolders: false
+      hippotranslation:id: a7fe63df-6099-4cf9-a578-3fbf6a201332
       hippotranslation:locale: en
       /the-medusa-news:
         jcr:primaryType: hippo:handle
@@ -27,9 +30,9 @@
         /the-medusa-news:
           jcr:primaryType: grebapidemo:newsdocument
           jcr:mixinTypes: ['mix:referenceable']
-          jcr:uuid: 1039f5c4-7385-45aa-a40b-bcba6d6f92c4
+          jcr:uuid: 79d90180-ebba-419e-bf67-1048869d80e4
           grebapidemo:author: Alfred Anonymous
-          grebapidemo:date: 2019-01-25T21:20:00+09:00
+          grebapidemo:date: 2025-12-17T12:54:00+01:00
           grebapidemo:documenttype: news
           grebapidemo:introduction: Lorem ipsum dolor sit amet, consectetur adipisicing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -49,7 +52,7 @@
           hippostdpubwf:lastModificationDate: 2013-11-12T13:04:00+01:00
           hippostdpubwf:lastModifiedBy: admin
           hippostdpubwf:publicationDate: 2013-11-12T13:04:00+01:00
-          hippotranslation:id: 18d08556-e45c-48a6-8468-b7263eea06ed
+          hippotranslation:id: cb85337e-fd6b-49fe-817a-2b57b3ae2c66
           hippotranslation:locale: en
           /grebapidemo:content:
             jcr:primaryType: hippostd:html
@@ -94,9 +97,9 @@
         /2013-harvest:
           jcr:primaryType: grebapidemo:newsdocument
           jcr:mixinTypes: ['mix:referenceable']
-          jcr:uuid: d4617083-dc20-471c-926e-2190e4c5f8a8
+          jcr:uuid: d146d907-eb3d-49d4-82be-3912e3c9fa32
           grebapidemo:author: Alfred Anonymous
-          grebapidemo:date: 2019-01-25T21:20:00+09:00
+          grebapidemo:date: 2025-12-17T12:54:00+01:00
           grebapidemo:documenttype: news
           grebapidemo:introduction: Lorem ipsum dolor sit amet, consectetur adipisicing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -116,7 +119,7 @@
           hippostdpubwf:lastModificationDate: 2013-11-12T14:31:00+01:00
           hippostdpubwf:lastModifiedBy: admin
           hippostdpubwf:publicationDate: 2013-11-12T14:31:00+01:00
-          hippotranslation:id: 7d224282-9224-4f6a-b165-d172de02e7bc
+          hippotranslation:id: e00bb0e4-6668-4337-a016-2563c9b3d922
           hippotranslation:locale: en
           /grebapidemo:content:
             jcr:primaryType: hippostd:html
@@ -161,9 +164,9 @@
         /the-gastropoda-news:
           jcr:primaryType: grebapidemo:newsdocument
           jcr:mixinTypes: ['mix:referenceable']
-          jcr:uuid: 9d8a91f0-5a36-4b48-922d-8c503512f747
+          jcr:uuid: 97d8e56b-3069-4fe1-9b6c-652787801b7c
           grebapidemo:author: Alfred Anonymous
-          grebapidemo:date: 2019-01-25T21:20:00+09:00
+          grebapidemo:date: 2025-12-17T12:54:00+01:00
           grebapidemo:documenttype: news
           grebapidemo:introduction: Lorem ipsum dolor sit amet, consectetur adipisicing
             elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
@@ -183,7 +186,7 @@
           hippostdpubwf:lastModificationDate: 2013-11-12T12:52:00+01:00
           hippostdpubwf:lastModifiedBy: admin
           hippostdpubwf:publicationDate: 2013-11-12T12:52:00+01:00
-          hippotranslation:id: 44c57b76-365c-42cc-9f22-dce0e01cfb08
+          hippotranslation:id: 98bb7640-481f-40ba-997b-8f526318cc4d
           hippotranslation:locale: en
           /grebapidemo:content:
             jcr:primaryType: hippostd:html

@@ -3,18 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
   <modelVersion>4.0.0</modelVersion>
   <parent>
-    <groupId>org.onehippo.forge.greb-api-demo</groupId>
-    <artifactId>greb-api-demo</artifactId>
-    <version>2.0.2-SNAPSHOT</version>
+    <groupId>org.example</groupId>
+    <artifactId>grebapidemo</artifactId>
+    <version>3.0.1-SNAPSHOT</version>
   </parent>
-  <artifactId>greb-api-demo-cms</artifactId>
+  <artifactId>grebapidemo-cms</artifactId>
   <packaging>war</packaging>
-  <name>Generic Resource Entity Builder Demo CMS</name>
-  <description>Generic Resource Entity Builder Demo CMS</description>
+  <name>grebapidemo CMS</name>
+  <description>grebapidemo CMS</description>
   <dependencies>
     <dependency>
       <groupId>${project.groupId}</groupId>
-      <artifactId>greb-api-demo-cms-dependencies</artifactId>
+      <artifactId>grebapidemo-cms-dependencies</artifactId>
       <version>${project.version}</version>
       <type>pom</type>
     </dependency>
@@ -36,7 +36,7 @@
       </plugin>
       <plugin>
         <groupId>org.codehaus.cargo</groupId>
-        <artifactId>cargo-maven2-plugin</artifactId>
+        <artifactId>cargo-maven3-plugin</artifactId>
         <configuration>
           <configuration>
             <type>runtime</type>

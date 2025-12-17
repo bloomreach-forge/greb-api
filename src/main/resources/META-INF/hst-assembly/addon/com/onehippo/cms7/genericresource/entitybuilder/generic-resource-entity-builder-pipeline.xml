@@ -36,17 +36,16 @@
   </bean>
 
   <bean id="genericResourceEntityJacksonJaxbIntrospector"
-        class="com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair"
-        factory-method="pair">
-    <constructor-arg>
-      <bean class="com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector"/>
-    </constructor-arg>
-    <constructor-arg>
-      <bean class="com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector"/>
-    </constructor-arg>
-  </bean>
-
-  <bean id="genericResourceEntityCustomResponseHeadersValveSettableHeaders"
+          class="com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair"
+          factory-method="pair">
+        <constructor-arg>
+            <bean class="com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationIntrospector"/>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector"/>
+        </constructor-arg>
+    </bean>
+    <bean id="genericResourceEntityCustomResponseHeadersValveSettableHeaders"
         class="org.springframework.beans.factory.config.ListFactoryBean">
     <property name="sourceList">
       <list>

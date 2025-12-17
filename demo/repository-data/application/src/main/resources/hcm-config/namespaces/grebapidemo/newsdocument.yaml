@@ -3,15 +3,15 @@ definitions:
     /hippo:namespaces/grebapidemo/newsdocument:
       jcr:primaryType: hipposysedit:templatetype
       jcr:mixinTypes: ['editor:editable', 'mix:referenceable']
-      jcr:uuid: cc2692c2-b89e-4aa0-b5ca-f647e103b522
+      jcr:uuid: 05edcb8a-8284-4860-8244-88d8abd4cf54
       /hipposysedit:nodetype:
         jcr:primaryType: hippo:handle
         jcr:mixinTypes: ['mix:referenceable']
-        jcr:uuid: 0af50506-9e99-4b82-ba3a-077ef4d38820
+        jcr:uuid: 29a2b674-d30c-4b40-8b9e-5913e1a27ab2
         /hipposysedit:nodetype:
           jcr:primaryType: hipposysedit:nodetype
           jcr:mixinTypes: ['hipposysedit:remodel', 'mix:referenceable']
-          jcr:uuid: aebbce13-57ef-4dca-ab9f-2458b7521357
+          jcr:uuid: 3b896700-916e-4afb-b2b9-050675dcf06b
           hipposysedit:node: true
           hipposysedit:supertype: ['grebapidemo:basedocument', 'hippostd:relaxed',
             'hippotranslation:translated']
@@ -86,7 +86,7 @@ definitions:
         /hipposysedit:prototype:
           jcr:primaryType: grebapidemo:newsdocument
           jcr:mixinTypes: ['mix:referenceable']
-          jcr:uuid: a69b9751-09df-402c-921f-f403995599ff
+          jcr:uuid: c5f1bd63-1d3f-42b1-8c83-85d90f6a0297
           grebapidemo:date: 0001-01-01T13:00:00+01:00
           grebapidemo:documenttype: news
           grebapidemo:introduction: ''

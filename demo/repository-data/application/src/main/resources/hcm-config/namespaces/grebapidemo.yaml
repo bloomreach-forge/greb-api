@@ -1,0 +1,6 @@
+definitions:
+  config:
+    /hippo:namespaces/grebapidemo:
+      jcr:primaryType: hipposysedit:namespace
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 27def152-3f49-4975-a50a-42403be900cb

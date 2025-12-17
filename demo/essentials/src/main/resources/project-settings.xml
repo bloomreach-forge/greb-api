@@ -10,10 +10,10 @@
     <hstRoot>/hst:grebapidemo</hstRoot>
     <projectNamespace>grebapidemo</projectNamespace>
     <repositoryDataModule>repository-data</repositoryDataModule>
-    <selectedBeansPackage>com.onehippo.cms7.genericresource.entitybuilder.demo.beans</selectedBeansPackage>
-    <selectedComponentsPackage>com.onehippo.cms7.genericresource.entitybuilder.demo.components</selectedComponentsPackage>
-    <selectedProjectPackage>com.onehippo.cms7.genericresource.entitybuilder.demo</selectedProjectPackage>
-    <selectedRestPackage>com.onehippo.cms7.genericresource.entitybuilder.demo.rest</selectedRestPackage>
+    <selectedBeansPackage>org.example.beans</selectedBeansPackage>
+    <selectedComponentsPackage>org.example.components</selectedComponentsPackage>
+    <selectedProjectPackage>org.example</selectedProjectPackage>
+    <selectedRestPackage>org.example.rest</selectedRestPackage>
     <setupDone>true</setupDone>
     <siteContextPath>/site</siteContextPath>
     <siteModule>site</siteModule>

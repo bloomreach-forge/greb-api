@@ -1,0 +1,15 @@
+definitions:
+  config:
+    /hippo:namespaces/grebapidemo/basedocument:
+      jcr:primaryType: hipposysedit:templatetype
+      jcr:mixinTypes: ['mix:referenceable']
+      jcr:uuid: 39e3875e-97ec-4928-ac08-f557e2ee7714
+      /hipposysedit:nodetype:
+        jcr:primaryType: hippo:handle
+        jcr:mixinTypes: ['mix:referenceable']
+        jcr:uuid: afc7c41d-2e9b-4d69-960a-b911b69b2a4f
+        /hipposysedit:nodetype:
+          jcr:primaryType: hipposysedit:nodetype
+          jcr:mixinTypes: ['hipposysedit:remodel']
+          hipposysedit:supertype: ['hippo:document', 'hippostdpubwf:document', 'hippostd:publishableSummary']
+          hipposysedit:uri: http://www.grebapidemo.com/grebapidemo/nt/1.0

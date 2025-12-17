@@ -2,4 +2,4 @@ definitions:
   namespace:
     grebapidemo:
       uri: http://www.grebapidemo.com/grebapidemo/nt/1.0
-      cnd: namespaces/greb-api-demo.cnd
+      cnd: namespaces/grebapidemo.cnd
