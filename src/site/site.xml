@@ -16,11 +16,12 @@
 -->
 <project name="greb-api">
 
-  <skin>
-    <groupId>org.bloomreach.forge.mavenskin</groupId>
-    <artifactId>forge-maven-skin</artifactId>
-    <version>3.0.1</version>
-  </skin>
+
+    <skin>
+        <groupId>org.bloomreach.forge.mavenskin</groupId>
+        <artifactId>forge-maven-skin</artifactId>
+        <version>3.2.1</version>
+    </skin>
 
 
   <custom>
