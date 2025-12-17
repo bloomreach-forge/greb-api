@@ -12,7 +12,7 @@
   <description>grebapidemo</description>
   <groupId>org.example</groupId>
   <artifactId>grebapidemo</artifactId>
-  <version>3.0.1</version>
+  <version>3.0.2-SNAPSHOT</version>
   <packaging>pom</packaging>
 
   <!--
