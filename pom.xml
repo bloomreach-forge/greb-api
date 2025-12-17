@@ -27,7 +27,7 @@
   <description>Generic Resource Entity Builder</description>
   <groupId>org.onehippo.forge.greb-api</groupId>
   <artifactId>greb-api</artifactId>
-  <version>3.0.0</version>
+  <version>3.0.1</version>
   <url>https://www.bloomreach.com/</url>
   <inceptionYear>2017</inceptionYear>
 
@@ -202,19 +202,6 @@
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
         <artifactId>maven-release-plugin</artifactId>
-      </plugin>
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-source-plugin</artifactId>
-        <executions>
-          <execution>
-            <id>attach-sources</id>
-            <phase>verify</phase>
-            <goals>
-              <goal>jar-no-fork</goal>
-            </goals>
-          </execution>
-        </executions>
       </plugin>
     </plugins>
 

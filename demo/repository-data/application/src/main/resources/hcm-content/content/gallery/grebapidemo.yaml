@@ -1,0 +1,7 @@
+/content/gallery/grebapidemo:
+  jcr:primaryType: hippogallery:stdImageGallery
+  jcr:mixinTypes: ['hippo:named', 'mix:referenceable']
+  jcr:uuid: 59c82070-6372-4c6e-9d6c-707a89528f1f
+  hippo:name: grebapidemo
+  hippostd:foldertype: [new-image-folder]
+  hippostd:gallerytype: ['hippogallery:imageset']
