@@ -35,14 +35,27 @@
     </property>
   </bean>
 
-  <bean id="genericResourceEntityJacksonJaxbIntrospector"
+<!--
+
+    <bean id="genericResourceEntityJacksonJaxbIntrospector"
           class="com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair"
           factory-method="pair">
         <constructor-arg>
-            <bean class="com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationIntrospector"/>
+            <bean class="com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector"/>
         </constructor-arg>
         <constructor-arg>
             <bean class="com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector"/>
+        </constructor-arg>
+    </bean>
+-->
+
+    <bean id="genericResourceEntityJacksonJaxbIntrospector"
+          class="com.fasterxml.jackson.databind.introspect.AnnotationIntrospectorPair">
+        <constructor-arg>
+            <bean class="com.fasterxml.jackson.databind.introspect.JacksonAnnotationIntrospector"/>
+        </constructor-arg>
+        <constructor-arg>
+            <bean class="com.fasterxml.jackson.module.jakarta.xmlbind.JakartaXmlBindAnnotationIntrospector"/>
         </constructor-arg>
     </bean>
     <bean id="genericResourceEntityCustomResponseHeadersValveSettableHeaders"
