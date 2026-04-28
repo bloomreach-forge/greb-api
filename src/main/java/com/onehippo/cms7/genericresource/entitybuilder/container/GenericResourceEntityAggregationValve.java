@@ -21,7 +21,6 @@ import java.util.Map;
 
 import jakarta.servlet.http.HttpServletResponse;
 
-import org.apache.commons.io.IOUtils;
 import org.apache.commons.lang3.StringUtils;
 import org.apache.commons.lang3.Strings;
 import org.hippoecm.hst.container.RequestContextProvider;
@@ -89,18 +88,14 @@ public class GenericResourceEntityAggregationValve extends AggregationValve {
 
         GenericResourceEntityBuilder builder = GenericResourceEntityBuilder.get(requestContext);
 
-        PrintWriter writer = null;
+        response.setContentType("application/json");
 
-        try {
-            response.setContentType("application/json");
-            writer = response.getWriter();
+        try (PrintWriter writer = response.getWriter()) {
             builder.write(getObjectMapper(), writer);
         } catch (GenericResourceEntityBuilderException e) {
             log.warn("Failed to generate json.", e);
         } catch (IOException e) {
             log.warn("Failed to write json.", e);
-        } finally {
-            IOUtils.closeQuietly(writer);
         }
     }
 }

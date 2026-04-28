@@ -32,20 +32,12 @@ public abstract class GenericResourceEntityBuilder {
 
     private static final String NAME = GenericResourceEntityBuilder.class.getName();
 
-    private static final Object lock = new Object();
-
     public static GenericResourceEntityBuilder get(final HstRequestContext requestContext) {
         GenericResourceEntityBuilder builder = (GenericResourceEntityBuilder) requestContext.getAttribute(NAME);
 
         if (builder == null) {
-            synchronized (lock) {
-                builder = (GenericResourceEntityBuilder) requestContext.getAttribute(NAME);
-
-                if (builder == null) {
-                    builder = new DefaultGenericResourceEntityBuilder();
-                    requestContext.setAttribute(NAME, builder);
-                }
-            }
+            builder = new DefaultGenericResourceEntityBuilder();
+            requestContext.setAttribute(NAME, builder);
         }
 
         return builder;
