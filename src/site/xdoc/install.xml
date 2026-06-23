@@ -3,7 +3,7 @@
   "-//Apache Software Foundation//DTD XDOC 1.0//EN"
   "http://maven.apache.org/dtd/xdoc_1_0.dtd">
 <!--
-  Copyright 2017-2019 BloomReach, Inc. (https://www.bloomreach.com)
+  Copyright 2026 BloomReach, Inc. (https://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -36,9 +36,9 @@
       <!-- SNIP -->
 
       <repository>
-        <id>hippo-maven2-forge</id>
-        <name>Hippo Maven 2 Forge repository</name>
-        <url>http://maven.onehippo.com/maven2-forge/</url>
+        <id>bloomreach-maven2-forge</id>
+        <name>Bloomreach Maven 2 Forge repository</name>
+        <url>https://maven.onehippo.com/maven2-forge/</url>
         <snapshots />
       </repository>
 
@@ -102,7 +102,7 @@
       <subsection name="Enabling Relevance in GREB Pipeline">
         <p>
           By default, the Pipeline of GREB API is not configured with
-          <a href="https://www.onehippo.org/library/enterprise/enterprise-features/targeting/targeting.html">Relevance Module</a>
+          <a href="https://xmdocumentation.bloomreach.com/library/enterprise/enterprise-features/targeting/targeting.html">Relevance Module</a>
           (i.e, <p>TargetingUpdateValve</p>).
           If you have already installed Relevance Module in your project, you can also enable Relevance in GREP API Pipeline.
         </p>
@@ -158,10 +158,10 @@
         </p>
         <ul>
           <li>
-            <a href="https://www.onehippo.org/library/concepts/rest/using-rest-api-with-ajax.html">Enable RESTful Service CORS Support</a>
+            <a href="https://xmdocumentation.bloomreach.com/library/concepts/rest/using-rest-api-with-ajax.html">Enable RESTful Service CORS Support</a>
           </li>
           <li>
-            <a href="https://www.onehippo.org/library/concepts/security/configure-security-response-headers.html">Configure Security Response Headers</a>
+            <a href="https://xmdocumentation.bloomreach.com/library/concepts/security/configure-security-response-headers.html">Configure Security Response Headers</a>
           </li>
         </ul>
       </subsection>

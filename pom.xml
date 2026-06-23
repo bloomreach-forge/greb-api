@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!--
-  Copyright 2017-2025 BloomReach, Inc. (https://www.bloomreach.com)
+  Copyright 2026 BloomReach, Inc. (https://www.bloomreach.com)
 
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
@@ -20,24 +20,24 @@
   <parent>
     <groupId>org.onehippo.cms7</groupId>
     <artifactId>hippo-cms7-project</artifactId>
-    <version>16.6.0</version>
+    <version>17.1.0</version>
   </parent>
 
   <name>Generic Resource Entity Builder</name>
   <description>Generic Resource Entity Builder</description>
   <groupId>org.onehippo.forge.greb-api</groupId>
   <artifactId>greb-api</artifactId>
-  <version>3.0.2-SNAPSHOT</version>
+  <version>4.0.0-SNAPSHOT</version>
   <url>https://www.bloomreach.com/</url>
   <inceptionYear>2017</inceptionYear>
 
   <properties>
 
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-    <project.build.javaVersion>17</project.build.javaVersion>
+    <project.build.javaVersion>21</project.build.javaVersion>
 
-    <hippo.repository.version>16.6.0</hippo.repository.version>
-    <hippo.hst.version>16.6.0</hippo.hst.version>
+    <hippo.repository.version>${hippo.release.version}</hippo.repository.version>
+    <hippo.hst.version>${hippo.release.version}</hippo.hst.version>
   </properties>
 
   <licenses>
@@ -147,12 +147,14 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+      <version>${junit4.version}</version>
       <scope>test</scope>
     </dependency>
 
     <dependency>
       <groupId>org.easymock</groupId>
       <artifactId>easymock</artifactId>
+      <version>${easymock.version}</version>
       <scope>test</scope>
     </dependency>
 
