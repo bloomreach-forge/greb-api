@@ -1,5 +1,5 @@
 /*
- *  Copyright 2017 Hippo B.V. (http://www.onehippo.com)
+ *  Copyright 2026 BloomReach, Inc. (https://www.bloomreach.com)
  */
 package com.onehippo.cms7.genericresource.entitybuilder;
 
