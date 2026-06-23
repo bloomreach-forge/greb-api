@@ -16,6 +16,9 @@ import org.junit.Before;
 import org.junit.Test;
 import org.onehippo.repository.mock.MockNode;
 
+import static org.junit.Assert.assertNotSame;
+import static org.junit.Assert.assertSame;
+
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.onehippo.cms7.genericresource.entitybuilder.jackson.DefaultJsonIgnoreTypeMixin;
 import com.onehippo.cms7.genericresource.entitybuilder.jackson.HstBeansExcludingObjectMapperDecorator;
@@ -35,6 +38,20 @@ public class GenericResourceEntityBuilderTest {
         extraMixins.put(Node.class, DefaultJsonIgnoreTypeMixin.class);
         decorator.setExtraMixins(extraMixins);
         objectMapper = decorator.decorate(new ObjectMapper());
+    }
+
+    @Test
+    public void get_returnsSameInstanceForSameRequestContext() {
+        GenericResourceEntityBuilder first = GenericResourceEntityBuilder.get(requestContext);
+        GenericResourceEntityBuilder second = GenericResourceEntityBuilder.get(requestContext);
+        assertSame(first, second);
+    }
+
+    @Test
+    public void get_returnsNewInstanceForDifferentRequestContext() {
+        GenericResourceEntityBuilder first = GenericResourceEntityBuilder.get(requestContext);
+        GenericResourceEntityBuilder second = GenericResourceEntityBuilder.get(new MockHstRequestContext());
+        assertNotSame(first, second);
     }
 
     @Test

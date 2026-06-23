@@ -39,6 +39,11 @@ public class HstLinkSerializer extends StdSerializer<HstLink> {
 
     @Override
     public void serialize(HstLink value, JsonGenerator gen, SerializerProvider provider) throws IOException {
+        if (value == null) {
+            gen.writeNull();
+            return;
+        }
+
         final HstRequestContext requestContext = RequestContextProvider.get();
 
         gen.writeStartObject();
